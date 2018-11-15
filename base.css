@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Raleway');
+
+
+
+
+*{
+    box-sizing:border-box;
+}
+body{
+    background-color:#0d0d0d;
+    color:white;
+}
+.wrapper{
+    display:grid;
+    grid-template-columns: 20% 80%;
+    grid-auto-rows: 1fr;
+}
+@keyframes skateOff{
+    0%{
+        transform:rotate(0);
+    }
+    50%{
+        transform:rotate(49deg);
+    }
+    100%{
+        transform: translateX(-300px);
+    }
+}
+
+.skateOff{
+    animation: skateOff  ease-in 1s forwards;
+}
+
+.x{
+    visibility: hidden;
+}
+
+
+.xPoof{
+    animation: xPoof .3s ease;
+}
+
+@keyframes xPoof{
+    0%{
+        visibility: visible;
+        opacity: 1;
+    }
+   
+    100%{
+    opacity:0;    
+}
+}
+
+.appear{
+    animation: appear 2s ease-in 1s;
+}
+
+@keyframes appear{
+    0%{opacity: 0;}
+    100%{opacity:1;}
+}
+
+.xslide{
+    animation:slideOut .8s ease 2s forwards;
+}
+
+
+.menu{
+    visibility: hidden;
+    color:black;
+    width:10em;
+    background-color:white;
+    border-radius: 4px;
+    font-family: 'Raleway';
+    background: linear-gradient(to right,
+    rgba(249,107,142,1),
+    rgba(218,103,230,1),
+    rgba(130,125,253,1));
+}
+.slideOut{
+    animation: slideOut 1s forwards 1.2s;
+}
+
+@keyframes slideOut{
+    0%{
+        transform: translateX(-50%);
+    }
+
+    50%{visibility: visible;
+        transform: translateX(8%);
+
+    }
+   
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+.slideIn{
+    animation: slideIn 2s ease forwards;
+
+}
+
+@keyframes slideIn{
+    0%{
+        visibility: visible;
+        transform: translateX(0);
+    }
+   
+    100%{
+        transform: translateX(-150%);
+    }
+}
+
+
+.menu ul{
+    list-style:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 20em;
+    padding:0 10px;
+}
+
+.menu a{
+    height:30px;
+    text-decoration: none;
+    color:black;
+    font-size:2em;
+}
+.menu a::after{
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: black;
+    transition: 300ms;
+    transition-timing-function: ease;
+}
+
+.menu a:hover::after{
+    width:80%;
+}
+
+
+.graphic{
+    grid-column: 2/3;
+    grid-row: 1/1;
+}
+
+
+video{
+    margin-top:-5em;
+    height:100vh;
+    width:68%;
+}
+/* 
+.top{
+    background: url('./imgs/pexels-photo-1332043.jpeg');
+    background-blend-mode: overlay;
+    background-color: rgba(0, 52, 87, 0.267);
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    height:100vh;
+    width:68%;
+} */
+.bottom{
+    width:68%;
+    margin-top:-3em;
+    background-color:black;
+    height:50vh;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2.8em;
+    line-height: 1em;
+}
+
+.bottom h2, p {
+    margin-right: -6.25rem;
+    z-index:5;
+}
+
+.bottom h2{
+    font-family: 'Abril Fatface';
+}
+
+.bottom p{
+    background-color:rgba(225,225,225, 0.4);
+}
+
+.bottom .name .small{
+    font-family: 'Source Serif Pro', serif;
+}
+
+.bottom .name{
+    font-size: 1rem;
+    font-family: 'Raleway';
+    transform: rotate(-90deg);
+    font-weight: lighter;
+    letter-spacing: 1px;
+    line-height:1em;
+}
+
+.bottom .small{
+    font-size: .5em;
+    text-align: left;
+}
+
+
+.featured{
+    grid-column: 1/-1;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top:2em;
+
+}
+
+.boardContainer img{
+    max-width:100%;
+    position: relative;
+    transition:.2s ease;
+    border-radius: 3px;
+}
+
+.boardContainer{
+    width:200px;
+    position: relative;
+}
+
+.boardContainer::after{
+    content:attr(data-title);
+    text-align: center;
+    z-index: 5;
+    position: absolute;
+    display:inline-block;
+    height:40px;
+    padding:1em 0 0 0;
+    /* background-color:blue; */
+    top:-100px;
+    left:0;
+    right:0;
+    bottom:0;
+    border: 2px solid white;
+    transition: all .3s ease;
+}
+
+.boardContainer:hover::after{
+    top:100px;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.boardContainer:hover::before{
+    content:'';
+    z-index: 4;
+    position: absolute;
+    display:inline-block;
+    height:34.1%;
+    background-color:rgba(0,0,0,0.9);
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transition: all .3s ease;
+}
+
+
+
+.board1{
+    transform: translate(-200px, 20px);
+    overflow:hidden;
+}
+
+.board2{
+    z-index: 2;
+    overflow:hidden;
+}
+
+.board3{
+    transform: translate(200px, 20px);
+    overflow:hidden;
+}
