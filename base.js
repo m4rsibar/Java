@@ -23,12 +23,15 @@ icons.addEventListener('click', (e)=> {
     let boardOne=document.querySelector('.board1');
     let boardTwo=document.querySelector('.board2');
     let boardThree=document.querySelector('.board3');
-
+    let title= document.querySelector('.title');
 
     if(scrollPos>featPosTop-windowHeight){
       let offset=Math.min(0, scrollPos-featPosTop+windowHeight-950);
       boardOne.style.transform='translate(' + offset +'px,'+ Math.abs(offset*0.2)+'px)';
       boardThree.style.transform='translate(' + Math.abs(offset) + 'px, ' +Math.abs(offset*0.2)+ 'px)';
+      title.style.display="block"
+    }else if(scrollPos<featPosTop-windowHeight){
+      title.style.display="none";
     }
 
   })
