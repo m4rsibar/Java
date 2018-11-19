@@ -24,14 +24,18 @@ icons.addEventListener('click', (e)=> {
     let boardTwo=document.querySelector('.board2');
     let boardThree=document.querySelector('.board3');
     let title= document.querySelector('.title');
+    let vid= document.querySelector('.video');
+    let bottomBubble=document.querySelector('.bottomBubble');
 
     if(scrollPos>featPosTop-windowHeight){
       let offset=Math.min(0, scrollPos-featPosTop+windowHeight-950);
       boardOne.style.transform='translate(' + offset +'px,'+ Math.abs(offset*0.2)+'px)';
       boardThree.style.transform='translate(' + Math.abs(offset) + 'px, ' +Math.abs(offset*0.2)+ 'px)';
-      title.style.display="block"
+      title.style.display="block";
+      bottomBubble.style.backgroundColor="white";
     }else if(scrollPos<featPosTop-windowHeight){
       title.style.display="none";
+      bottomBubble.style.backgroundColor="initial";
     }
 
   })
