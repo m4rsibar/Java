@@ -17,27 +17,31 @@ icons.addEventListener('click', (e)=> {
 
 
   window.addEventListener('scroll', ()=>{
-    let scrollPos= this.pageYOffset;
-    let featPosTop= featured.getBoundingClientRect().top;
     let windowHeight=window.innerHeight;
+    let featPosBottom=featured.getBoundingClientRect().bottom;
+    let featPosTop= featured.getBoundingClientRect().top;
+    let scrollPos= this.pageYOffset;
     let boardOne=document.querySelector('.board1');
     let boardTwo=document.querySelector('.board2');
     let boardThree=document.querySelector('.board3');
     let title= document.querySelector('.title');
-    let vid= document.querySelector('.video');
-    let bottomBubble=document.querySelector('.bottomBubble');
 
-    if(scrollPos>featPosTop-windowHeight){
+    if(scrollPos>featPosTop-windowHeight&&window.innerWidth>640){
       let offset=Math.min(0, scrollPos-featPosTop+windowHeight-950);
       boardOne.style.transform='translate(' + offset +'px,'+ Math.abs(offset*0.2)+'px)';
       boardThree.style.transform='translate(' + Math.abs(offset) + 'px, ' +Math.abs(offset*0.2)+ 'px)';
       title.style.display="block";
-      bottomBubble.style.backgroundColor="white";
-    }else if(scrollPos<featPosTop-windowHeight){
+    }else if(scrollPos<featPosTop-windowHeight&&window.innerWidth>640){
       title.style.display="none";
-      bottomBubble.style.backgroundColor="initial";
     }
-
   })
+  let bubbles=document.querySelector('.scroll');
+  let bottomBubble=document.querySelector('.bottomBubble');
+  let topBubble=document.querySelector('.topBubble');
+
+  let windowHeight=window.innerHeight;
+  let featPosBottom=featured.getBoundingClientRect().bottom;
+  let featPosTop= featured.getBoundingClientRect().top;
+  let scrollPos= this.pageYOffset;
 
 
