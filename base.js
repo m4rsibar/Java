@@ -35,6 +35,9 @@ icons.addEventListener('click', (e)=> {
       title.style.display="none";
     }
   })
+
+
+
   let bubbles=document.querySelector('.scroll');
   let bottomBubble=document.querySelector('.bottomBubble');
   let topBubble=document.querySelector('.topBubble');
