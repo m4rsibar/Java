@@ -15,8 +15,24 @@ icons.addEventListener('click', (e)=> {
   
   const featured=document.querySelector('.featured');
 
+  
+  function debounce(func, wait=17, immediate=true) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
 
-  window.addEventListener('scroll', ()=>{
+  window.addEventListener('scroll', debounce(()=>{
+    console.count('hi');
     let windowHeight=window.innerHeight;
     let featPosBottom=featured.getBoundingClientRect().bottom;
     let featPosTop= featured.getBoundingClientRect().top;
@@ -34,17 +50,9 @@ icons.addEventListener('click', (e)=> {
     }else if(scrollPos<featPosTop-windowHeight&&window.innerWidth>640){
       title.style.display="none";
     }
-  })
+  }))
 
 
 
-  let bubbles=document.querySelector('.scroll');
-  let bottomBubble=document.querySelector('.bottomBubble');
-  let topBubble=document.querySelector('.topBubble');
-
-  let windowHeight=window.innerHeight;
-  let featPosBottom=featured.getBoundingClientRect().bottom;
-  let featPosTop= featured.getBoundingClientRect().top;
-  let scrollPos= this.pageYOffset;
 
 

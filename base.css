@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Raleway');
 
 
-
-
 *{
     box-sizing:border-box;
 }
@@ -455,5 +453,6 @@ video{
     .title{
         font-size:1.9rem;
     }
+
     
   }

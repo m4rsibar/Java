@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Full Slide</title>
+    <style>
+        body, .slide{
+            margin:0;
+            height:100vh;
+            width:100%;
+            padding:0;
+            overflow-x:hidden;
+        }
+        body{
+            position: relative;
+        }
+        .slides{
+            margin:1em auto;
+            padding:0;
+            overflow-x:hidden;
+            width:95%;
+            box-shadow: -1px 1px 13px 0px black;
+        }
+        .slide{
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-blend-mode: color;
+            background-color:rgba(0,0,0,0.4);
+            position:absolute;
+            transition: ease;
+            transition-duration: .7s;
+            height:100%;
+            font-family: "Staatliches";
+            letter-spacing:0.2em;
+        }
+        .slide h1{
+            color:white;
+            padding:3px;
+        }
+
+        .slider-1{
+            background-image: url('imgs/coffee1.jpeg');
+
+        }
+        .slider-2{
+            background-image: url('imgs/coffee2.jpeg');
+
+        }
+        .slider-3{
+            background-image: url('imgs/coffee3.jpeg');
+        }
+        .slider-4{
+            background-image: url('imgs/coffee4.jpeg');
+        }
+        .slider-5{
+            background-image: url('imgs/coffee5.jpeg');
+        }
+        
+        .slides{
+            position: relative;
+            height:50vh;
+        }
+     
+        .right{
+            transform: translateX(100%);
+            position: absolute;
+            top:46.9%;
+            right:0;
+            padding-right:.8em;
+            transition: ease-in-out;
+            transition-duration: .3s;
+            cursor:pointer;
+        }
+
+
+         .left{
+            transform: translateX(-100%);
+            position: absolute;
+            top:46.9%;
+            left:0;
+            padding-left:.8em;
+            transition: ease-in-out;
+            transition-duration: .3s;
+            cursor:pointer;
+        }
+        .showArrow{
+            transform: translateX(0);
+        }
+        .showImg{
+            opacity:1;
+
+        }
+        .hideImg{
+            opacity:0;
+        }
+        .java{
+            display:inline-block;
+            font-size:5em;
+            border: 4px solid white;
+            padding: .1em .3em;
+            line-height: 1em;
+            color:white;
+            transform: translateX(.5em);
+            margin-top:.3em;
+        }
+
+        .codingCafe{
+            color:white;
+            font-weight: lighter;
+            transform: translateX(100px);
+        }
+
+        
+.navbar {
+  background: black;
+  top: 0;
+  width: 100%;
+  transition:all 1s ease;
+  position: relative;
+  z-index: 1;
+  margin-bottom:2em;
+  z-index:100;
+    position:relative;
+}
+
+body.fixed-nav .navbar {
+  position: fixed;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.navbar li {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a{
+    text-decoration: none;
+    color:white;
+}
+
+li.logo {
+  max-width:0;
+  overflow: hidden;
+  background: white;
+  transition: all 0.5s;
+  font-weight: 600;
+  font-size: 30px;
+  z-index:100;
+}
+.logo a{
+    color:black;
+}
+
+.fixed-nav li.logo {
+  max-width: 500px;
+}
+
+.lorem{
+    margin:2em 8em;
+    background-color:#161616;
+}
+.lorem h1{
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size:5rem;
+}
+
+.im{
+    max-height:200px;
+    border-radius:50%;
+    transition: all .3s ease;
+}
+.im:hover{
+    border-radius:2px;
+    transform: scale(1.1);
+}
+
+.menuChoice{
+    display:flex;
+    justify-content: space-evenly;
+    background-image: url(imgs/arches.png);
+    background-color:rgba(26, 190, 240, .5);
+    border-radius: 18px;
+    font-family:"Staatliches";
+    margin:2.5em auto;
+    width:50%;
+    align-items: center;
+    padding:2em;
+}
+.menuChoice span{
+    padding:0 1em;
+}
+
+
+.choice{
+    display:flex;
+    place-items: center;
+    background-color: #161616;;
+    padding: 1em 2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.choice:hover{
+    background-color: white;
+}
+
+.choice a{
+    text-decoration: none;
+    color:white;
+    letter-spacing: 1.5px;
+}
+.choice:hover a{
+    color:black;
+}
+
+.menu{
+    display:flex;
+}
+
+
+.headingWrapper{
+  font-size:10rem;
+  padding:0;
+  margin:0;
+  font-family:'Open Sans Condensed';
+  font-weight:700;
+  color:white;
+  position:relative;
+  background-color:black;
+    height:200px;
+}
+.headingWrapper span{
+  display:inline-block;
+  position:absolute;
+}
+
+.b{
+   z-index:1;     transform:translateX(.4em);
+   text-shadow: -3px 0px 20px black, 2px 1px 18px black;
+}
+
+.o{
+ transform:translateX(.75em)
+}
+.u{
+  transform:translateX(1.17em);
+  z-index:1;
+  text-shadow: -3px -2px 18px black;
+
+}
+.t{
+  transform:translateX(1.64em);
+  z-index:1;
+  text-shadow: -2px -2px 20px black;
+
+}
+
+
+@media(max-width:800px){
+    .menuChoice{
+        flex-direction: column;
+    }
+}
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Staatliches|Open+Sans:400,300|Open+Sans+Condensed:700" rel="stylesheet">
+</head>
+<body>
+    <div class="slides">
+        <div class="slider-1 slide"><div class="java">Ja<br>va</div><br><div class="codingCafe">Coding Cafe</div></div>
+
+        <div class="slider-2 slide"><div class="java">Ja<br>va</div><br><div class="codingCafe">Coding Cafe</div></div>
+        
+        <div class="slider-3 slide"><div class="java">Ja<br>va</div><br><div class="codingCafe">Coding Cafe</div></div>
+        
+        <div class="slider-4 slide"><div class="java">Ja<br>va</div><br><div class="codingCafe">Coding Cafe</div></div>
+
+        <div class="slider-5 slide"><div class="java">Ja<br>va</div><br><div class="codingCafe">Coding Cafe</div></div>
+        
+        <span class='right arrow'><img src="imgs/rightarrow.png" alt=""></span>
+        <span class='left arrow'><img src="imgs/leftarrow.png" alt=""></span>
+    </div>
+    
+    <div class="navbar">
+        <ul>
+            <li class="logo"><a href="#">JAVA.</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Blah</a></li>
+        </ul>
+    </div>
+    
+    <div class="about">
+        <div class="headingWrapper">
+                <span class="a">A</span>
+                <span class="b">B</span>
+                <span class="o">O</span>
+                <span class="u">U</span>
+                <span class="t">T</span>
+        </div>
+    </div>
+        <div class="aboutContent">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat blanditiis nisi numquam modi itaque sunt est voluptatum assumenda delectus tempora nostrum officia dolorum quasi deserunt soluta, quos quod ea qui quibusdam. Quisquam unde possimus, tempora quae assumenda molestias cum rem, repellendus deleniti ut eos repudiandae quos fugiat porro. Reiciendis porro fuga culpa quis maxime expedita quae saepe magni nemo modi ex vero accusamus corrupti laborum, labore earum, id fugiat beatae cupiditate natus quod sequi. Et esse quae necessitatibus dicta magnam quia, quidem vel, laboriosam numquam modi ex odio dolorum odit amet cum delectus commodi nesciunt quaerat obcaecati magni? Nam inventore possimus obcaecati praesentium rerum commodi laudantium quam voluptates libero voluptate qui nulla tempora, officiis a ipsum facere quod recusandae vero. Quasi soluta molestias nisi culpa, porro nulla enim aperiam minima iste nam consequatur fugiat eum voluptates eaque. Enim, beatae? Omnis sit provident voluptas, dicta consequuntur similique eveniet ratione deserunt eum. Eius beatae quos distinctio assumenda dolore voluptas autem accusantium quod officia alias magni ut accusamus inventore molestiae ducimus blanditiis ex maiores quia, ad ea aut voluptatibus tenetur. Vero doloremque fugiat eum suscipit recusandae delectus officia, debitis eligendi rerum. Totam sit adipisci numquam quibusdam doloremque voluptates non aspernatur. Laudantium, facere impedit.
+        </div>
+    </div>
+
+    <div class="menuChoice">
+        <h1>What Kind of Drink<br> Would You Like?</h1>
+        <div class="hot choice"><a href="#">Hot</a></div>
+        <span>or</span>
+        <div class="cold choice"><a href="#">Cold</a></div>
+    </div>
+
+    <!-- <div class="menu">
+        <img src="/imgs/iced macchiato.jpg" alt="iced macchiato" class="im">
+    </div> -->
+   
+<div class="lorem">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, sit iure? Numquam rerum, reprehenderit incidunt dolore, assumenda, et iste earum quis eius illum quasi repellendus voluptates maxime? Corporis veniam placeat excepturi velit fuga aut praesentium in nemo magnam qui autem dicta blanditiis eveniet, dolorum ullam dolore suscipit a nam cupiditate consequuntur vel totam iste similique fugit. Hic cum nemo asperiores dolorum enim perspiciatis ex? Non eligendi optio aperiam dolorum quos? Accusamus labore aut eum veniam explicabo ex provident molestias harum culpa dolore accusantium mollitia, eveniet libero. Earum ad culpa, dolorum esse eveniet, perferendis ab cum perspiciatis odit totam delectus nihil, incidunt est veniam nisi expedita hic iusto id. Ratione labore doloremque ipsa ipsam magni voluptatibus exercitationem commodi ab perspiciatis placeat. Eveniet reprehenderit autem, omnis adipisci velit amet repellendus temporibus quibusdam nisi, cumque, nesciunt doloribus vitae? Deserunt earum distinctio voluptates ratione voluptatem nam culpa deleniti, aut fuga atque pariatur sint, vitae ipsum iste fugit doloremque, modi velit qui natus aspernatur eaque. Ipsa sapiente consectetur, cumque iure placeat tempora aut corporis dolorem velit? Voluptatem quisquam nostrum in, soluta eum quasi rerum officia quidem deleniti atque? Iste quaerat voluptates veritatis totam non dolore asperiores tempora impedit incidunt magnam optio, aut maiores ullam laboriosam dicta autem neque laudantium, atque nostrum facilis! Dolore inventore illo aspernatur molestiae sapiente blanditiis nemo, repellat iusto, quam maxime quod. Omnis, veniam accusantium quas odit exercitationem porro, maxime asperiores eius facilis dignissimos nemo alias. Rem, odit adipisci aut eius minima repudiandae obcaecati iusto nulla. Voluptatibus tempore eaque architecto, vel repellat beatae ea enim, harum dolores recusandae deserunt saepe cupiditate? Corrupti qui sint consectetur ea adipisci necessitatibus non vel a nisi ad tempora optio accusamus ipsa quo deserunt recusandae corporis facilis repellendus est aliquam, laborum cum quos beatae animi. Quo accusantium assumenda suscipit tempora repudiandae similique corrupti distinctio tenetur. Aspernatur fugit ipsa, iusto, architecto, tenetur molestias eos quasi corrupti consequuntur dolorem quisquam beatae reiciendis suscipit asperiores sunt autem? Suscipit, necessitatibus quos cum quo laborum laudantium fuga! Sequi dignissimos architecto cupiditate! Totam deserunt non voluptatem itaque, harum error quasi eligendi possimus facere ex sequi illo debitis odit repellendus atque cum et sit doloremque tempore quo fuga? Ducimus voluptatum hic beatae unde, praesentium accusamus eligendi ex quis. Doloribus optio amet earum ex, minima facere quod assumenda adipisci at hic! Ad eos nulla odit dolorem voluptatibus maxime, nam inventore repudiandae ipsum qui, sequi, tempore quaerat. Similique consectetur consequuntur quae magnam voluptates, nemo, inventore minima omnis assumenda aspernatur veritatis quos officiis suscipit eius iste totam eaque amet aut, nulla atque? Quia error, voluptatem, soluta optio unde aliquam nam temporibus quisquam doloremque minima fugiat eveniet, id adipisci. Delectus reiciendis temporibus vel inventore quod ducimus facere laboriosam aperiam quis et soluta veritatis commodi dolores nulla labore voluptas autem, optio dolor? Voluptatibus cupiditate non, voluptates natus sunt distinctio, voluptate neque maiores, hic placeat quibusdam a similique! Magnam sint, libero dignissimos id, molestiae non minus provident quas quis eligendi quam consequuntur sequi in quo error quibusdam est qui eum cupiditate doloremque magni aliquid. Sed distinctio modi temporibus laudantium aperiam nemo eos exercitationem, sequi vero magni commodi corporis laboriosam, et suscipit obcaecati fugit numquam expedita earum eveniet harum rerum tenetur? Vitae illum animi dolorum. Optio atque distinctio, vitae corporis, quam, quo commodi ratione doloremque excepturi beatae totam vero porro nam? Voluptate distinctio blanditiis voluptates quisquam accusamus nemo voluptatem explicabo repellat? Impedit alias voluptas, odio numquam ipsa eligendi labore quia voluptate natus consequatur blanditiis, maxime, quidem iusto distinctio! Sequi aut quibusdam error distinctio accusamus quam illum a modi libero similique numquam nihil repellat consequuntur quo officiis aspernatur ea sapiente ducimus est voluptates, iure quos laudantium deleniti maxime. At sunt tempore maxime, perspiciatis praesentium ullam sint ipsum veniam minima placeat? Atque similique veniam, itaque aliquam et ducimus nesciunt delectus, ullam odit rem deleniti laborum perferendis maiores consequuntur fugit? Quia laborum, soluta similique hic vero labore architecto laboriosam quidem modi possimus minus deleniti eius doloribus saepe dolorum. Nobis dolor maxime, quis animi molestiae voluptatibus id, aperiam cupiditate amet aliquam possimus alias doloribus commodi veritatis voluptates est! Ullam voluptate fugiat accusantium quaerat mollitia ipsam corrupti. Dignissimos adipisci hic incidunt, rem, alias placeat laborum, illo cupiditate tempora reiciendis magni tenetur. Dignissimos architecto veniam dolorum odit corporis, temporibus porro earum pariatur! Ut repellendus laudantium mollitia nisi dolor aliquid, tempore rem eos libero sapiente recusandae minima tenetur, voluptatibus in aut? Pariatur quis maxime accusamus asperiores non iste dignissimos illo totam, soluta dolorem veniam molestias repellendus est. Nihil iusto totam veritatis aperiam, libero nemo nulla, odio maxime ullam, eum aut at iure. Est officia nam id modi soluta rem eum. Pariatur fuga voluptatem assumenda autem eius veritatis, veniam neque animi repellat laboriosam cupiditate beatae odio repellendus facilis a nesciunt praesentium aut provident, deserunt alias consequatur sed. Ipsam consequatur alias reprehenderit ipsum tenetur repellat inventore animi! Alias totam, omnis cum doloremque perspiciatis veniam, aliquid libero temporibus quaerat iusto ipsam?
+</div>
+
+
+
+    <script> 
+    let imgs=document.querySelectorAll('.slide'),
+     current=0, 
+     rightArrow=document.querySelector('.right'),
+     leftArrow=document.querySelector('.left'),
+     slide=document.querySelectorAll('.slide'),
+     imgContainer= document.querySelector('.slides'),
+     navbar= document.querySelector('.navbar'),
+     body= document.querySelector('body');
+
+//Image Slider Functionality
+
+    function reset(){
+        imgs.forEach(img=>{
+            img.classList.add('hideImg');
+        })
+    }
+
+    function startSlide(){
+        reset();
+        imgs[0].classList.remove('hideImg');
+        imgs[0].classList.add('showImg');
+    }
+
+    function next(){
+        reset();
+        imgs[current + 1 ].classList.remove('hideImg');
+        imgs[current + 1 ].classList.add('showImg');
+        current ++;
+    }
+
+    function last(){
+        reset();
+        imgs[current-1].classList.remove('hideImg');
+        imgs[current-1].classList.add('showImg');
+        current--;
+    }
+
+    function leftOrRight(e){
+        if(e.offsetX>imgContainer.getBoundingClientRect().width/2&&e.offsetY<imgContainer.getBoundingClientRect().height||e.keyCode==39){
+            if(current===imgs.length -1){
+            current=-1;
+            }
+            next();
+        }
+        if(e.offsetX<window.innerWidth/2&&e.offsetY<imgContainer.getBoundingClientRect().height||e.keyCode==37){
+            if(current===0){
+            current=imgs.length;
+        }
+            last();
+        }
+    }
+
+    function removeClass(element,classToRemove){
+        (element).classList.remove(classToRemove);
+    }
+    function addClass(element,classToAdd){
+        (element).classList.remove(classToAdd);
+    }
+
+    imgContainer.addEventListener('keyup',leftOrRight)
+    imgContainer.addEventListener('click',leftOrRight);
+
+        startSlide();
+
+    let looper=setInterval(() => {
+            if(current===imgs.length -1){
+            current=-1;
+            }
+            next();
+        }, 4500);
+
+        imgContainer.addEventListener('mouseenter', e=>{
+            clearInterval(looper);
+            slide.forEach(slide=>{
+                slide.style.backgroundColor="transparent";
+            });
+        });
+
+    slide.forEach(slide=>{
+        slide.addEventListener('mousemove', (e)=>{
+        let x=e.offsetX;
+        let y=e.offsetY;
+
+        if(x>imgContainer.getBoundingClientRect().width/2){
+            rightArrow.classList.add('showArrow');
+        }else{
+            rightArrow.classList.remove('showArrow');
+        }
+        if(x<imgContainer.getBoundingClientRect().width/2){
+            rightArrow.classList.remove('showArrow');
+            leftArrow.classList.add('showArrow');
+        }else{
+            leftArrow.classList.remove('showArrow');
+        }
+    });
+    });
+
+    imgContainer.addEventListener('mouseleave', function(e){
+        looper= setInterval(() => {
+            if(current===imgs.length -1){
+            current=-1;
+            }
+            next();
+        }, 4500);
+
+        imgs.forEach(img=>{
+            removeClass(rightArrow, 'showArrow');
+            removeClass(leftArrow, 'showArrow');
+        });
+        slide.forEach(slide=>{
+                slide.style.backgroundColor="rgba(0,0,0,0.4)";
+            });
+    });
+//Navbar Functionality
+
+
+function debounce(func, wait=20, immediate=true) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+    function stickNav(e){
+        console.log('scrolled');
+        let scroll= window.pageYOffset;
+        let navTop= navbar.offsetTop;
+        if (window.scrollY >= navTop){
+            body.style.paddingTop = navbar.offsetHeight + 'px';
+            body.classList.add('fixed-nav');
+        }
+    }
+
+    window.addEventListener('scroll', debounce(stickNav));
+            
+    </script>
+</body>
+</html>
