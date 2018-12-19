@@ -7,7 +7,6 @@
     <title>Full Slide</title>
     <style>
         body, .slide{
-            margin:0;
             height:100vh;
             width:100%;
             padding:0;
@@ -15,6 +14,8 @@
         }
         body{
             position: relative;
+            margin:0;
+            padding:0;
         }
         .slides{
             margin:1em auto;
@@ -103,7 +104,7 @@
             display:inline-block;
             font-size:5em;
             border: 4px solid white;
-            padding: .1em .3em;
+            padding: 0 .3em;
             line-height: 1em;
             color:white;
             transform: translateX(.5em);
@@ -120,13 +121,14 @@
 .navbar {
   background: black;
   top: 0;
-  width: 100%;
+  width: 100vw;
+  height:3rem;
   transition:all 1s ease;
   position: relative;
   z-index: 1;
-  margin-bottom:2em;
+  margin: 0 0 2em;
   z-index:100;
-    position:relative;
+  position:relative;
 }
 
 body.fixed-nav .navbar {
@@ -152,6 +154,8 @@ body.fixed-nav .navbar {
 .navbar a{
     text-decoration: none;
     color:white;
+    font-family: "Staatliches";
+    font-weight:lighter;
 }
 
 li.logo {
@@ -162,6 +166,7 @@ li.logo {
   font-weight: 600;
   font-size: 30px;
   z-index:100;
+  height:3rem;
 }
 .logo a{
     color:black;
@@ -237,14 +242,16 @@ li.logo {
 
 .headingWrapper{
   font-size:10rem;
-  padding:0;
-  margin:0;
+  padding:0 0 0 .2em;
+  margin:0 0 0 .2em;
   font-family:'Open Sans Condensed';
   font-weight:700;
   color:white;
   position:relative;
   background-color:black;
-    height:200px;
+  height:200px;
+  width:40%;
+  float:left;
 }
 .headingWrapper span{
   display:inline-block;
@@ -269,7 +276,11 @@ li.logo {
   transform:translateX(1.64em);
   z-index:1;
   text-shadow: -2px -2px 20px black;
+}
 
+.aboutContent{
+    column-count: 3;
+    padding: 0 3em 0 2em;
 }
 
 
@@ -279,6 +290,31 @@ li.logo {
     }
 }
 
+@media(max-width:1340px){
+    .aboutContent{
+        clear:both;
+        padding-top: 2em;
+    }
+}
+
+@media(max-width:790px){
+    .aboutContent{
+        clear:both;
+        column-count:2;
+        padding-top: 2em;
+    }
+
+    .headingWrapper{
+        padding-right:3em;
+    }
+}
+
+@media(max-width:650px){
+    .aboutContent{
+        column-count: 1;
+    
+    }
+}
 
     </style>
     <link href="https://fonts.googleapis.com/css?family=Staatliches|Open+Sans:400,300|Open+Sans+Condensed:700" rel="stylesheet">
