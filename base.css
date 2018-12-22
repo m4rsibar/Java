@@ -74,6 +74,7 @@ body{
     rgba(249,107,142,1),
     rgba(218,103,230,1),
     rgba(130,125,253,1));
+    height:28em;
 }
 .slideOut{
     animation: slideOut 1s forwards 1.2s;

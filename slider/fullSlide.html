@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Full Slide</title>
     <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
         body, .slide{
             height:100vh;
             width:100%;
@@ -121,7 +125,7 @@
 .navbar {
   background: black;
   top: 0;
-  width: 100vw;
+  width: 100%;
   height:3rem;
   transition:all 1s ease;
   position: relative;
@@ -176,15 +180,6 @@ li.logo {
   max-width: 500px;
 }
 
-.lorem{
-    margin:2em 8em;
-    background-color:#161616;
-}
-.lorem h1{
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-size:5rem;
-}
 
 .im{
     max-height:200px;
@@ -235,8 +230,11 @@ li.logo {
     color:black;
 }
 
-.menu{
+.coldMenu{
     display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding:2em;
 }
 
 
@@ -283,7 +281,6 @@ li.logo {
     padding: 0 3em 0 2em;
 }
 
-
 @media(max-width:800px){
     .menuChoice{
         flex-direction: column;
@@ -305,7 +302,9 @@ li.logo {
     }
 
     .headingWrapper{
-        padding-right:3em;
+        /* padding-right:3em; */
+        width:90vw;
+        margin:0;
     }
 }
 
@@ -361,18 +360,22 @@ li.logo {
 
     <div class="menuChoice">
         <h1>What Kind of Drink<br> Would You Like?</h1>
-        <div class="hot choice"><a href="#">Hot</a></div>
+        <div class="hot choice"><a href="">Hot</a></div>
         <span>or</span>
-        <div class="cold choice"><a href="#">Cold</a></div>
+        <div class="cold choice"><a href="javascript:void(0)">Cold</a></div>
     </div>
 
-    <!-- <div class="menu">
-        <img src="/imgs/iced macchiato.jpg" alt="iced macchiato" class="im">
-    </div> -->
+    <div class="coldMenu">
+        <!-- <img src="imgs/iced macchiato.jpg" alt="Iced Macchiato" class="im">
+        <img src="imgs/icedCoffee.jpg" alt="Classic Iced Coffee" class="im">
+        <img src="imgs/blended.jpg" alt="Blended Coffee" class="im">
+        <img src="imgs/coldbrew.jpg" alt="Cold Brew" class="im">
+        <img src="imgs/nitro.jpg" alt="Nitro" class="im"> -->
+    </div>
    
-<div class="lorem">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, sit iure? Numquam rerum, reprehenderit incidunt dolore, assumenda, et iste earum quis eius illum quasi repellendus voluptates maxime? Corporis veniam placeat excepturi velit fuga aut praesentium in nemo magnam qui autem dicta blanditiis eveniet, dolorum ullam dolore suscipit a nam cupiditate consequuntur vel totam iste similique fugit. Hic cum nemo asperiores dolorum enim perspiciatis ex? Non eligendi optio aperiam dolorum quos? Accusamus labore aut eum veniam explicabo ex provident molestias harum culpa dolore accusantium mollitia, eveniet libero. Earum ad culpa, dolorum esse eveniet, perferendis ab cum perspiciatis odit totam delectus nihil, incidunt est veniam nisi expedita hic iusto id. Ratione labore doloremque ipsa ipsam magni voluptatibus exercitationem commodi ab perspiciatis placeat. Eveniet reprehenderit autem, omnis adipisci velit amet repellendus temporibus quibusdam nisi, cumque, nesciunt doloribus vitae? Deserunt earum distinctio voluptates ratione voluptatem nam culpa deleniti, aut fuga atque pariatur sint, vitae ipsum iste fugit doloremque, modi velit qui natus aspernatur eaque. Ipsa sapiente consectetur, cumque iure placeat tempora aut corporis dolorem velit? Voluptatem quisquam nostrum in, soluta eum quasi rerum officia quidem deleniti atque? Iste quaerat voluptates veritatis totam non dolore asperiores tempora impedit incidunt magnam optio, aut maiores ullam laboriosam dicta autem neque laudantium, atque nostrum facilis! Dolore inventore illo aspernatur molestiae sapiente blanditiis nemo, repellat iusto, quam maxime quod. Omnis, veniam accusantium quas odit exercitationem porro, maxime asperiores eius facilis dignissimos nemo alias. Rem, odit adipisci aut eius minima repudiandae obcaecati iusto nulla. Voluptatibus tempore eaque architecto, vel repellat beatae ea enim, harum dolores recusandae deserunt saepe cupiditate? Corrupti qui sint consectetur ea adipisci necessitatibus non vel a nisi ad tempora optio accusamus ipsa quo deserunt recusandae corporis facilis repellendus est aliquam, laborum cum quos beatae animi. Quo accusantium assumenda suscipit tempora repudiandae similique corrupti distinctio tenetur. Aspernatur fugit ipsa, iusto, architecto, tenetur molestias eos quasi corrupti consequuntur dolorem quisquam beatae reiciendis suscipit asperiores sunt autem? Suscipit, necessitatibus quos cum quo laborum laudantium fuga! Sequi dignissimos architecto cupiditate! Totam deserunt non voluptatem itaque, harum error quasi eligendi possimus facere ex sequi illo debitis odit repellendus atque cum et sit doloremque tempore quo fuga? Ducimus voluptatum hic beatae unde, praesentium accusamus eligendi ex quis. Doloribus optio amet earum ex, minima facere quod assumenda adipisci at hic! Ad eos nulla odit dolorem voluptatibus maxime, nam inventore repudiandae ipsum qui, sequi, tempore quaerat. Similique consectetur consequuntur quae magnam voluptates, nemo, inventore minima omnis assumenda aspernatur veritatis quos officiis suscipit eius iste totam eaque amet aut, nulla atque? Quia error, voluptatem, soluta optio unde aliquam nam temporibus quisquam doloremque minima fugiat eveniet, id adipisci. Delectus reiciendis temporibus vel inventore quod ducimus facere laboriosam aperiam quis et soluta veritatis commodi dolores nulla labore voluptas autem, optio dolor? Voluptatibus cupiditate non, voluptates natus sunt distinctio, voluptate neque maiores, hic placeat quibusdam a similique! Magnam sint, libero dignissimos id, molestiae non minus provident quas quis eligendi quam consequuntur sequi in quo error quibusdam est qui eum cupiditate doloremque magni aliquid. Sed distinctio modi temporibus laudantium aperiam nemo eos exercitationem, sequi vero magni commodi corporis laboriosam, et suscipit obcaecati fugit numquam expedita earum eveniet harum rerum tenetur? Vitae illum animi dolorum. Optio atque distinctio, vitae corporis, quam, quo commodi ratione doloremque excepturi beatae totam vero porro nam? Voluptate distinctio blanditiis voluptates quisquam accusamus nemo voluptatem explicabo repellat? Impedit alias voluptas, odio numquam ipsa eligendi labore quia voluptate natus consequatur blanditiis, maxime, quidem iusto distinctio! Sequi aut quibusdam error distinctio accusamus quam illum a modi libero similique numquam nihil repellat consequuntur quo officiis aspernatur ea sapiente ducimus est voluptates, iure quos laudantium deleniti maxime. At sunt tempore maxime, perspiciatis praesentium ullam sint ipsum veniam minima placeat? Atque similique veniam, itaque aliquam et ducimus nesciunt delectus, ullam odit rem deleniti laborum perferendis maiores consequuntur fugit? Quia laborum, soluta similique hic vero labore architecto laboriosam quidem modi possimus minus deleniti eius doloribus saepe dolorum. Nobis dolor maxime, quis animi molestiae voluptatibus id, aperiam cupiditate amet aliquam possimus alias doloribus commodi veritatis voluptates est! Ullam voluptate fugiat accusantium quaerat mollitia ipsam corrupti. Dignissimos adipisci hic incidunt, rem, alias placeat laborum, illo cupiditate tempora reiciendis magni tenetur. Dignissimos architecto veniam dolorum odit corporis, temporibus porro earum pariatur! Ut repellendus laudantium mollitia nisi dolor aliquid, tempore rem eos libero sapiente recusandae minima tenetur, voluptatibus in aut? Pariatur quis maxime accusamus asperiores non iste dignissimos illo totam, soluta dolorem veniam molestias repellendus est. Nihil iusto totam veritatis aperiam, libero nemo nulla, odio maxime ullam, eum aut at iure. Est officia nam id modi soluta rem eum. Pariatur fuga voluptatem assumenda autem eius veritatis, veniam neque animi repellat laboriosam cupiditate beatae odio repellendus facilis a nesciunt praesentium aut provident, deserunt alias consequatur sed. Ipsam consequatur alias reprehenderit ipsum tenetur repellat inventore animi! Alias totam, omnis cum doloremque perspiciatis veniam, aliquid libero temporibus quaerat iusto ipsam?
-</div>
+    <div class="aboutContent">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat blanditiis nisi numquam modi itaque sunt est voluptatum assumenda delectus tempora nostrum officia dolorum quasi deserunt soluta, quos quod ea qui quibusdam. Quisquam unde possimus, tempora quae assumenda molestias cum rem, repellendus deleniti ut eos repudiandae quos fugiat porro. Reiciendis porro fuga culpa quis maxime expedita quae saepe magni nemo modi ex vero accusamus corrupti laborum, labore earum, id fugiat beatae cupiditate natus quod sequi. Et esse quae necessitatibus dicta magnam quia, quidem vel, laboriosam numquam modi ex odio dolorum odit amet cum delectus commodi nesciunt quaerat obcaecati magni? Nam inventore possimus obcaecati praesentium rerum commodi laudantium quam voluptates libero voluptate qui nulla tempora, officiis a ipsum facere quod recusandae vero. Quasi soluta molestias nisi culpa, porro nulla enim aperiam minima iste nam consequatur fugiat eum voluptates eaque. Enim, beatae? Omnis sit provident voluptas, dicta consequuntur similique eveniet ratione deserunt eum. Eius beatae quos distinctio assumenda dolore voluptas autem accusantium quod officia alias magni ut accusamus inventore molestiae ducimus blanditiis ex maiores quia, ad ea aut voluptatibus tenetur. Vero doloremque fugiat eum suscipit recusandae delectus officia, debitis eligendi rerum. Totam sit adipisci numquam quibusdam doloremque voluptates non aspernatur. Laudantium, facere impedit.
+    </div>
 
 
 
@@ -509,7 +512,6 @@ function debounce(func, wait=20, immediate=true) {
 };
 
     function stickNav(e){
-        console.log('scrolled');
         let scroll= window.pageYOffset;
         let navTop= navbar.offsetTop;
         if (window.scrollY >= navTop){
@@ -519,7 +521,44 @@ function debounce(func, wait=20, immediate=true) {
     }
 
     window.addEventListener('scroll', debounce(stickNav));
-            
-    </script>
+        
+    let coldMenu=document.querySelector('.coldMenu');
+    
+let drinks=[];
+
+let coldButton=document.querySelector('.cold');
+let menuChoice=document.querySelector('.menuChoice');
+
+
+coldButton.addEventListener('click', ()=>{
+
+
+    fetch('./coldMenu.JSON', {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    })
+        .then(response=>response.json())
+        .then(data => {
+        drinks = [...data.drinks];
+
+
+        for (var i = 0; i < drinks.length; i++) {
+            coldMenu.innerHTML += `<img src="${drinks[i].img}" alt="${drinks[i].drink}" class="im">`
+        }
+        coldMenu.scrollIntoView(); 
+
+    })
+}, {once : true})
+
+   
+
+    
+    
+
+
+
+</script>
 </body>
 </html>
