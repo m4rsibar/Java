@@ -170,7 +170,7 @@ coldButton.addEventListener('click', ()=>{
 
 
         for (var i = 0; i < drinks.length; i++) {
-            coldMenu.innerHTML += `<img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg">`
+            coldMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"></div>`
         }
         coldMenu.scrollIntoView(); 
 
@@ -212,51 +212,51 @@ hotFetched=true;
 })
 
 
+// let content=document.querySelector('.content');
+// let myBtn=document.querySelector('.myBtn');
+// myBtn.addEventListener('click', fadeOut);
 
-let myBtn=document.querySelector('.myBtn');
-myBtn.addEventListener('click', fadeOut);
-
-body.style.overflowY="hidden";
-
-
-
-  function fadeOut() {
-    TweenMax.to(".myBtn", 1, {
-         y: -100,
-         opacity: 0
-    });
-
-    TweenMax.to(".screen", 2, {
-         y: -400,
-         opacity: 0,
-         ease: Power4.easeInOut,
-         delay: 2
-    });
-
-    TweenMax.from(".overlay", 2, {
-         ease: Power2.easeInOut
-    });
-
-    TweenMax.to(".overlay", 2, {
-         delay: 2.6,
-         top: "-110%",
-         ease: Expo.easeInOut
-    });
+// content.style.display="none";
 
 
-    TweenMax.from(".content", 2, {
-         delay: 3.2,
-         opacity: 0,
-         ease: Power2.easeInOut,
-    });
 
-    TweenMax.to(".content", 1, {
-         opacity: 1,
-         delay: 3.2,
-         ease: Power2.easeInOut,
-         onComplete: overflow
-    });
-    function overflow(){
-        body.style.overflowY="scroll";
-    }
-    }
+//   function fadeOut() {
+//     TweenMax.to(".myBtn", 1, {
+//          y: -100,
+//          opacity: 0
+//     });
+
+//     TweenMax.to(".screen", 2, {
+//          y: -400,
+//          opacity: 0,
+//          ease: Power4.easeInOut,
+//          delay: 2
+//     });
+
+//     TweenMax.from(".overlay", 2, {
+//          ease: Power2.easeInOut
+//     });
+
+//     TweenMax.to(".overlay", 2, {
+//          delay: 2.6,
+//          top: "-110%",
+//          ease: Expo.easeInOut
+//     });
+
+
+//     TweenMax.from(".content", 2, {
+//          delay: 3.2,
+//          opacity: 0,
+//          ease: Power2.easeInOut,
+//     });
+
+//     TweenMax.to(".content", 1, {
+//          opacity: 1,
+//          delay: 3.2,
+//          ease: Power2.easeInOut,
+//          onComplete: overflow
+//     });
+//     function overflow(){
+//         content.style.display='initial';
+//     }
+//     }

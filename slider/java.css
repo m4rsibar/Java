@@ -4,6 +4,8 @@
 
     html{
         scroll-behavior: smooth;
+        height:100%;
+        width:100%;
     }
     body, .slide{
         height:100vh;
@@ -14,6 +16,8 @@
         position: relative;
         margin:0;
         padding:0;
+        height:100%;
+        width:100%;
     }
     .slides{
         margin:1em auto;
@@ -297,6 +301,10 @@
         padding: 0 3em 0 2em;
     }
 
+    .lorem{
+        margin:5em;
+    }
+
     @media(max-width:800px){
         .menuChoice{
             flex-direction: column;
@@ -331,79 +339,6 @@
         }
     }
 
-   .overlay {
-        z-index: 1000000000;
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        background: url(imgs/landingpage.jpeg);
-        background-blend-mode: color;
-        background-size: cover;
-        background-color: rgba(0,0,0,0.6);
-   }
-   
-   .overlay p {
-        font-size: 300px;
-        font-weight: 800;
-   }
-   .screen {
-        color: rgba(225,225,225,0.2);
-        font-family: "Staatliches";
-        position: absolute;
-        top: 12%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-   }
-    
-   .myBtn {
-        font-family: "Staatliches";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-   }
-    
-   button {
-        display: block;
-        padding: 24px 48px;
-        font-weight: 700;
-        font-size: 12px;
-        letter-spacing: 6px;
-        color: #fff;
-        border: 2px solid #fff;
-        text-transform: uppercase;
-        outline: none;
-        overflow: hidden;
-        background: none;
-        z-index: 1000000000;
-        cursor: crosshair;
-        transition: 0.8s ease-out;
-   }
-
-   .button:focus {
-    outline: none;
-}
-
-   .myBtn:hover {
-        color: #101010;
-        cursor: crosshair;
-   }
-    
-   .myBtn:before {
-        content: "";
-        position: absolute;
-        background: #fff;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 100%;
-        z-index: -1;
-        transition: top 0.8s ease-out;
-   }
-    
-   .myBtn:hover:before {
-        top: 0;
-   }
    
    ::-webkit-scrollbar-track
 {
