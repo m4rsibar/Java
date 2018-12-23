@@ -210,3 +210,53 @@ hotButton.addEventListener('click', ()=>{
 }
 hotFetched=true;
 })
+
+
+
+let myBtn=document.querySelector('.myBtn');
+myBtn.addEventListener('click', fadeOut);
+
+body.style.overflowY="hidden";
+
+
+
+  function fadeOut() {
+    TweenMax.to(".myBtn", 1, {
+         y: -100,
+         opacity: 0
+    });
+
+    TweenMax.to(".screen", 2, {
+         y: -400,
+         opacity: 0,
+         ease: Power4.easeInOut,
+         delay: 2
+    });
+
+    TweenMax.from(".overlay", 2, {
+         ease: Power2.easeInOut
+    });
+
+    TweenMax.to(".overlay", 2, {
+         delay: 2.6,
+         top: "-110%",
+         ease: Expo.easeInOut
+    });
+
+
+    TweenMax.from(".content", 2, {
+         delay: 3.2,
+         opacity: 0,
+         ease: Power2.easeInOut,
+    });
+
+    TweenMax.to(".content", 1, {
+         opacity: 1,
+         delay: 3.2,
+         ease: Power2.easeInOut,
+         onComplete: overflow
+    });
+    function overflow(){
+        body.style.overflowY="scroll";
+    }
+    }
