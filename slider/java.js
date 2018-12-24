@@ -129,12 +129,15 @@ function debounce(func, wait=20, immediate=true) {
 	};
 };
 
-    function stickNav(e){
-        let scroll= window.pageYOffset;
-        let navTop= navbar.offsetTop;
+let navTop= navbar.offsetTop;
+
+    function stickNav(){
         if (window.scrollY >= navTop){
             body.style.paddingTop = navbar.offsetHeight + 'px';
             body.classList.add('fixed-nav');
+        }else{
+            body.style.paddingTop=0;
+            body.classList.remove('fixed-nav');
         }
     }
 
@@ -170,7 +173,7 @@ coldButton.addEventListener('click', ()=>{
 
 
         for (var i = 0; i < drinks.length; i++) {
-            coldMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"></div>`
+            coldMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span>${drinks[i].drink}</span></div>`
         }
         coldMenu.scrollIntoView(); 
 
