@@ -16,7 +16,7 @@ icons.addEventListener('click', (e)=> {
   const featured=document.querySelector('.featured');
 
   
-  function debounce(func, wait=17, immediate=true) {
+  function debounce(func, wait=13, immediate=true) {
     var timeout;
     return function() {
       var context = this, args = arguments;
