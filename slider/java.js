@@ -221,48 +221,44 @@ body.style.overflow="hidden";
 
 
   function fadeOut() {
-    TweenMax.to(".myBtn", 1, {
+    TweenMax.to(".myBtn", .5, {
          y: -100,
          opacity: 0
     });
 
-    TweenMax.to(".screen", 2, {
+    TweenMax.to(".backText", 1, {
          y: -400,
          opacity: 0,
          ease: Power4.easeInOut,
-         delay: 2
+         delay: 1
     });
 
-    TweenMax.from(".overlay", 2, {
+    TweenMax.from(".overlay", 1.2, {
          ease: Power2.easeInOut
     });
 
     TweenMax.to(".overlay", 2, {
-         delay: 2.6,
+         delay: 1.6,
          top: "-110%",
          ease: Expo.easeInOut,
          onComplete: overflow
     });
 
-//     TweenMax.to(".overlayContainer", 2, {
-//         delay: 2.6,
-//         top: "-110%",
-//         ease: Expo.easeInOut,
-//         onComplete: overflow
-//    });
-
     TweenMax.from(".content", 2, {
-         delay: 3.2,
+         delay: 2.2,
          opacity: 0,
+         y:-100,
          ease: Power2.easeInOut,
     });
 
     TweenMax.to(".content", 1, {
          opacity: 1,
-         delay: 3.2,
-         ease: Power2.easeInOut,
-        //  onComplete: overflow
+         delay: 2.2,
+         y:0,
+         ease: Power1.easeInOut
     });
+
+
     function overflow(){
         body.style.overflow="auto";
     }
