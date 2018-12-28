@@ -32,7 +32,6 @@ icons.addEventListener('click', (e)=> {
   };
 
   window.addEventListener('scroll', debounce(()=>{
-    console.count('hi');
     let windowHeight=window.innerHeight;
     let featPosBottom=featured.getBoundingClientRect().bottom;
     let featPosTop= featured.getBoundingClientRect().top;
@@ -41,7 +40,7 @@ icons.addEventListener('click', (e)=> {
     let boardTwo=document.querySelector('.board2');
     let boardThree=document.querySelector('.board3');
     let title= document.querySelector('.title');
-
+    console.log('wtf')
     if(scrollPos>featPosTop-windowHeight&&window.innerWidth>640){
       let offset=Math.min(0, scrollPos-featPosTop+windowHeight-950);
       boardOne.style.transform='translate(' + offset +'px,'+ Math.abs(offset*0.2)+'px)';

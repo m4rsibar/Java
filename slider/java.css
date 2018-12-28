@@ -16,24 +16,28 @@
         padding:0;
     }
     body{
-        /* position: relative; */
+        position: relative;
         margin:0;
         padding:0;
         height:100%;
         width:100%;
-        /* overflow:hidden; */
+        overflow:hidden;
     }
 
+.content{
+    visibility: hidden;
+}
 
     .overlay{
         position: fixed;
         height:100vh;
+        top:0;
         background-color:black;
-        width:100%;
+        width:100vw;
         z-index:199999;
-        background: rgba(0,0,0,0.4) url("imgs/landingpage.jpeg") no-repeat center;
+        background: rgba(0,0,0,0.4) url("imgs/landingpage.jpeg") no-repeat;
         background-blend-mode: color;
-        background-size: cover;
+        background-size:cover;
         font-family: "Staatliches";    
     }
 
@@ -77,6 +81,7 @@
     .slides{
         margin-left:auto;
         margin-right:auto;
+        margin-bottom:2em;
         padding:0;
         overflow-x:hidden;
         width:95%;
@@ -310,6 +315,7 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         padding:2em;
+        
     }
 /* HOT MENU */
     .hotMenu{
@@ -318,6 +324,7 @@
         justify-content: space-evenly;
         padding:2em;
     }
+
 
 /* ABOUT SECTION */
     .headingWrapper{

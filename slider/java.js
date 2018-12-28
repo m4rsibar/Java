@@ -131,6 +131,7 @@ function debounce(func, wait=15, immediate=true) {
 let navTop= navbar.offsetTop;
 
     function stickNav(){
+
         if (window.scrollY >= navTop){
             body.style.paddingTop = navbar.offsetHeight + 'px';
             body.classList.add('fixed-nav');
@@ -149,6 +150,7 @@ let navTop= navbar.offsetTop;
 let drinks=[];
 
 let coldButton=document.querySelector('.cold');
+
 let menuChoice=document.querySelector('.menuChoice');
 let hotButton=document.querySelector('.hot');
 
@@ -158,6 +160,8 @@ coldButton.addEventListener('click', ()=>{
     if(hotMenu.style.display='flex'){
         hotMenu.style.display="none";
     }
+
+
 
     if(!coldFetched){
     fetch('./menu.JSON', {
@@ -214,15 +218,20 @@ hotFetched=true;
 })
 
 
-let myBtn=document.querySelector('.myBtn');
+let myBtn=document.querySelector('.myBtn'),
+    content=document.querySelector('.content'),
+    overlayContainer=document.querySelector('.overlayContainer'),
+    overlay= document.querySelector('.overlay')
+
+    
 myBtn.addEventListener('click', fadeOut);
 
-body.style.overflow="hidden";
 
 
   function fadeOut() {
     TweenMax.to(".myBtn", .5, {
-         y: -100,
+        y:-100,
+         scaleX:0.1,
          opacity: 0
     });
 
@@ -230,36 +239,39 @@ body.style.overflow="hidden";
          y: -400,
          opacity: 0,
          ease: Power4.easeInOut,
-         delay: 1
+         delay: 1,
+
     });
 
     TweenMax.from(".overlay", 1.2, {
-         ease: Power2.easeInOut
+         ease: Power2.easeInOut,
+         onComplete: showContent
     });
 
     TweenMax.to(".overlay", 2, {
          delay: 1.6,
          top: "-110%",
          ease: Expo.easeInOut,
-         onComplete: overflow
     });
 
-    TweenMax.from(".content", 2, {
-         delay: 2.2,
-         opacity: 0,
-         y:-100,
-         ease: Power2.easeInOut,
-    });
+ 
 
-    TweenMax.to(".content", 1, {
-         opacity: 1,
-         delay: 2.2,
-         y:0,
-         ease: Power1.easeInOut
-    });
-
-
-    function overflow(){
+    function showContent(){
+        content.style.visibility="visible";
         body.style.overflow="auto";
+        }
     }
-    }
+
+
+
+    let movementStrength=100;
+    let height= movementStrength/window.innerHeight;
+    let width= movementStrength/window.innerWidth;
+
+    overlay.addEventListener('mousemove', e=>{
+        let pageX=e.pageX;
+        let pageY=e.pageY;
+        let newValueX=width*pageX*-1/-25;
+        let newValueY=height*pageY*-1/-50;
+        overlay.style.backgroundPosition=`${newValueX}px ${newValueY}px`
+    });
