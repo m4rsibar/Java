@@ -51,18 +51,15 @@
         padding:0;
         transform: translate(-50%, -50%);
     }
-    .myBtn {
+    .enterButton {
         position: absolute;
+        border-radius: 5px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-   }
-   
-    
-   button {
         display: block;
         padding: 24px 48px;
-        font-family: Poppins;
+        font-family:'Open Sans';
         font-weight: 700;
         font-size: 12px;
         letter-spacing: 6px;
@@ -73,9 +70,10 @@
         overflow: hidden;
         background: none;
         z-index: 1;
-        cursor: crosshair;
+        cursor: pointer;
         transition: 0.8s ease-out;
    }
+
     
     /* SlideShow */
     .slides{
@@ -85,7 +83,7 @@
         padding:0;
         overflow-x:hidden;
         width:95%;
-        box-shadow: -1px 1px 13px 0px black;
+        box-shadow: -1px 1px 13px 0px rgba(8, 8, 8, 0.527);
     }
     .slide{
         background-size: cover;
@@ -204,6 +202,7 @@
     padding: 0;
     list-style: none;
     display: flex;
+    height:100%;
     }
 
     .navbar li {
@@ -244,13 +243,18 @@
     }
 /* MENU */
 
+.menuChoice h1{
+    flex-basis:100%;
+}
+
     .menuChoice{
         display:flex;
         justify-content: space-evenly;
-        border-left:2px solid black;
+        box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.445);
+        border-radius:6px;
         font-family:"Staatliches";
-        margin:2.5em auto;
-        width:50%;
+        margin:8em auto 4em;
+        width:55%;
         align-items: center;
         padding:2em;
     }
@@ -272,6 +276,8 @@
     }
 
 
+
+
     .choice a{
         text-decoration: none;
         color:white;
@@ -284,7 +290,7 @@
 
     .menuImgContainer{
         position:relative;
-        display: flex;
+        /* display: flex; */
         align-items: center;
         color: white;
         justify-content: center;
@@ -296,33 +302,55 @@
         transition: all .3s ease;
     }
     .menuImgContainer:hover .menuImg{
-        border-radius:30%;
         transform: scale(1.1);
         cursor: pointer;
+        box-shadow: -1px 1px 17px black;
     }
 
-    .menuImgContainer span{
+    .menuImgContainer .name{
         position: absolute;
+        color:white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
         font-family:'Open Sans';
-        border:1px solid white;
         font-weight:400;
         padding: .1em .2em;
+        pointer-events: none;
     }
+    
+
+/* active class for menu */
+    .menu.active .menuImgContainer {
+        opacity:.3;
+        transform:scale(1.1);
+        filter:blur(5px);
+    }
+    
+    .menu .menuImgContainer.active {
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+
 
 /* COLD MENU */
     .coldMenu{
         display:none;
+        opacity:0.1;
+        /* display:flex; */
         flex-wrap: wrap;
         justify-content: space-evenly;
-        padding:2em;
-        
+        padding:0;
     }
+
 /* HOT MENU */
     .hotMenu{
         display:none;
+        /* display:flex; */
         flex-wrap: wrap;
         justify-content: space-evenly;
-        padding:2em;
+        padding:0;
     }
 
 
@@ -330,6 +358,7 @@
     .headingWrapper{
     font-size:10rem;
     padding:0 0 0 .2em;
+    border-radius:4px;
     margin:0 0 0 .2em;
     font-family:'Open Sans Condensed';
     font-weight:700;
@@ -401,6 +430,9 @@
         }
         .menuChoice h1{
             padding-bottom:.8em;
+        }
+        .backText{
+            font-size:20em;
         }
     }
 

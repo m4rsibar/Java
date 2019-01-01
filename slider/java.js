@@ -154,17 +154,39 @@ let coldButton=document.querySelector('.cold');
 let menuChoice=document.querySelector('.menuChoice');
 let hotButton=document.querySelector('.hot');
 
-let coldFetched=false;
-coldButton.addEventListener('click', ()=>{
-    coldMenu.style.display="flex";
-    if(hotMenu.style.display='flex'){
-        hotMenu.style.display="none";
-    }
+let showColdMenu = new TimelineMax({paused:true, reversed: true});
 
+    
+    showColdMenu.to(
+      ".coldMenu",
+      1,
+      { 
+        display: "flex",
+        opacity: 1, 
+        y:-8,
+      }, "showmenu" )
+    
+
+// timeline for showing hot menu
+      let showHotMenu=new TimelineMax({paused:true, reversed:true});
+
+    showHotMenu.to(
+      ".hotMenu",1,{ 
+       opacity: 1, 
+       y:-5,
+       display: "flex" 
+      },"showmenu")
+
+let coldFetched=false;
+coldButton.addEventListener('click',e=>{
+    e.preventDefault();
+   showHotMenu.pause(0)
+    showColdMenu.restart()
+ 
 
 
     if(!coldFetched){
-    fetch('./menu.JSON', {
+      fetch('./menu.JSON', {
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -176,26 +198,43 @@ coldButton.addEventListener('click', ()=>{
 
 
         for (var i = 0; i < drinks.length; i++) {
-            coldMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span>${drinks[i].drink}</span></div>`
+            coldMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span class="name">${drinks[i].drink}</span></div>`
         }
         coldMenu.scrollIntoView(); 
-
+        
+        let menuImgs=document.querySelectorAll('.menuImgContainer');
+        console.log(menuImgs)
+        
+        function boxEnter(e) {
+            this.classList.add('active');
+            this.parentNode.classList.add('active');
+        }
+        
+        function boxLeave(e) {
+            this.classList.remove('active');
+            this.parentNode.classList.remove('active');
+        }
+        
+        menuImgs.forEach(function(i){
+          i.addEventListener('mouseenter', boxEnter);
+          i.addEventListener('mouseleave', boxLeave);
+        })
     })
 }
 coldFetched=true;
 })
 
 
-
 let hotFetched=false;
-hotButton.addEventListener('click', ()=>{
-    hotMenu.style.display="flex";
-    if(coldMenu.style.display='flex'){
-        coldMenu.style.display="none";
-    }
+    hotButton.addEventListener('click',e=>{
+        e.preventDefault();
+        showColdMenu.pause(0)
+          showHotMenu.restart()
+      });
+
     
     if(!hotFetched){
-    fetch('./menu.JSON', {
+      fetch('./menu.JSON', {
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -206,34 +245,49 @@ hotButton.addEventListener('click', ()=>{
         drinks = [...data.hotDrinks];
 
         for (var i = 0; i < drinks.length; i++) {
-            hotMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span>${drinks[i].drink}</span></div>`
+            hotMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span class="name">${drinks[i].drink}
+            </span></div>`
+            
         }
+        hotMenu.scrollIntoView();
 
-
-        hotMenu.scrollIntoView(); 
-
+        let menuImgs=document.querySelectorAll('.menuImgContainer');
+        console.log(menuImgs)
+        
+        function boxEnter(e) {
+            this.classList.add('active');
+            this.parentNode.classList.add('active');
+        }
+        
+        function boxLeave(e) {
+            this.classList.remove('active');
+            this.parentNode.classList.remove('active');
+        }
+        
+        menuImgs.forEach(function(i){
+          i.addEventListener('mouseenter', boxEnter);
+          i.addEventListener('mouseleave', boxLeave);
+        })
     })
 }
 hotFetched=true;
-})
 
 
-let myBtn=document.querySelector('.myBtn'),
+
+let enterButton=document.querySelector('.enterButton'),
     content=document.querySelector('.content'),
     overlayContainer=document.querySelector('.overlayContainer'),
     overlay= document.querySelector('.overlay')
 
     
-myBtn.addEventListener('click', fadeOut);
-
-
+enterButton.addEventListener('click', fadeOut);
 
   function fadeOut() {
-    TweenMax.to(".myBtn", .5, {
-        y:-100,
-         scaleX:0.1,
-         opacity: 0
-    });
+
+    
+    TweenMax.to('.enterButton', 0.1, {scaleX:1.3, scaleY:1,  ease: Power4.easeInOut} );
+    TweenMax.to('.enterButton', 0.1, {scaleX:0.1, scaleY:0.1, opacity: 0, delay:0.3,  ease: Power4.easeInOut});
+
 
     TweenMax.to(".backText", 1, {
          y: -400,
@@ -252,8 +306,23 @@ myBtn.addEventListener('click', fadeOut);
          delay: 1.6,
          top: "-110%",
          ease: Expo.easeInOut,
-    });
+    })
 
+    TweenMax.staggerFromTo(".navbar ul li", 1, {
+        opacity:0,
+        y:8
+    },{
+        ease:Expo.easeInOut,
+        delay:2,
+        opacity: 1,
+        y:0
+    },0.2)
+
+
+    TweenMax.staggerFromTo(".slides", 1, {
+        y:-50, ease:Expo.easeInOut},
+        {delay:2.3, y:0, ease:Expo.easeInOut
+    })
  
 
     function showContent(){
@@ -262,7 +331,7 @@ myBtn.addEventListener('click', fadeOut);
         }
     }
 
-
+if(window.width>800){
 
     let movementStrength=100;
     let height= movementStrength/window.innerHeight;
@@ -275,3 +344,5 @@ myBtn.addEventListener('click', fadeOut);
         let newValueY=height*pageY*-1/-50;
         overlay.style.backgroundPosition=`${newValueX}px ${newValueY}px`
     });
+}
+
