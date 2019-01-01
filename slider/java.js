@@ -230,7 +230,6 @@ let hotFetched=false;
         e.preventDefault();
         showColdMenu.pause(0)
           showHotMenu.restart()
-      });
 
     
     if(!hotFetched){
@@ -247,9 +246,8 @@ let hotFetched=false;
         for (var i = 0; i < drinks.length; i++) {
             hotMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span class="name">${drinks[i].drink}
             </span></div>`
-            
         }
-        hotMenu.scrollIntoView();
+        hotMenu.scrollIntoView(); 
 
         let menuImgs=document.querySelectorAll('.menuImgContainer');
         console.log(menuImgs)
@@ -271,6 +269,7 @@ let hotFetched=false;
     })
 }
 hotFetched=true;
+});
 
 
 
