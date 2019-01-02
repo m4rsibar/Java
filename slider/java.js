@@ -7,9 +7,10 @@
      navbar= document.querySelector('.navbar'),
      body= document.querySelector('body');
 
-//Image Slider Functionality
+//splash page
+window.addEventListener('load', _=>{
     let tl = new TimelineMax();
-  
+
     tl.staggerTo(
       ".landPageLetters",
       1.4,
@@ -72,21 +73,18 @@
         y:0
     },0.3, "disappear+=1.5")
 
-
-
-
     content=document.querySelector('.content');
 
       function showContent(){
                 content.style.display="initial";
                 body.style.overflow="auto";
                 }
-
     });
+})
 
-  
-  
 
+
+//image slider
     function reset(){
         imgs.forEach(img=>{
             img.classList.add('hideImg');
