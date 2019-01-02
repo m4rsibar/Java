@@ -89,7 +89,7 @@
     transition:.2s ease;
     opacity:0;
   }
-  
+
   .enterButton:focus{outline:0}
 
   .enterButton:hover{
@@ -449,14 +449,18 @@
 /* MEDIA QUERIES    */
 
     @media(max-width:800px){
+        .headingWrapper{
+            right: .4em;
+        }
+        .content{
+            margin:0;
+        }
         .menuChoice{
             flex-direction: column;
+            width:90%;
         }
         .menuChoice h1{
             padding-bottom:.8em;
-        }
-        .backText{
-            font-size:20em;
         }
         .menu{
             flex-direction:column;
