@@ -34,8 +34,8 @@ window.addEventListener('load', _=>{
     let button = document.querySelector(".enterButton");
     button.addEventListener("click", _ => {
 
-        tl.to('.enterButton', 0.1, {scaleX:1.1, scaleY:1,  ease: Power4.easeInOut} );
-            tl.to('.enterButton', 0.1, {scaleX:0.1, scaleY:0.1, opacity: 0, delay:0.3,  ease: Power4.easeInOut});
+        tl.to('.enterButton', 0.1, {scaleX:1.5, scaleY:1.5,  ease: Power4.easeInOut} )
+            tl.to('.enterButton', 0.1, {scaleX:0.2, scaleY:0.2, opacity: 0, delay:0.3,  ease: Power4.easeInOut})
 
         tl.to("button", .7, {
         y:"-120%",
@@ -76,7 +76,7 @@ window.addEventListener('load', _=>{
     content=document.querySelector('.content');
 
       function showContent(){
-                content.style.display="initial";
+                // content.style.display="initial";
                 body.style.overflow="auto";
                 }
     });
