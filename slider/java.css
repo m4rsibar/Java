@@ -222,6 +222,7 @@
 
     .fixed-nav .navbar {
     position: fixed;
+    z-index:10;
     box-shadow: 0 5px 0 rgba(0,0,0,0.1);
     }
 
