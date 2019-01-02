@@ -8,6 +8,85 @@
      body= document.querySelector('body');
 
 //Image Slider Functionality
+window.addEventListener("load", _ => {
+    let tl = new TimelineMax();
+  
+    tl.staggerTo(
+      ".landPageLetters",
+      1.4,
+      {
+        opacity: 1,
+        ease: Expo.easeInOut
+      },
+      0.3, "init"
+    );
+  
+    tl.to(".overlay", 0.8, {
+      visibility: "visible",
+      y: 0,
+      ease: Bounce.easeOut
+    },"init+=2.2");
+  
+    tl.to("button", 0.8, {
+      opacity: "1"
+    });
+  
+    let button = document.querySelector(".enterButton");
+    button.addEventListener("click", _ => {
+
+        tl.to('.enterButton', 0.1, {scaleX:1.1, scaleY:1,  ease: Power4.easeInOut} );
+            tl.to('.enterButton', 0.1, {scaleX:0.1, scaleY:0.1, opacity: 0, delay:0.3,  ease: Power4.easeInOut});
+
+        tl.to("button", .7, {
+        y:"-120%",
+        opacity: "0"
+      },"disappear")
+      
+      tl.to(".overlay", 1.2, {
+        y: "-120%",
+       ease:Power1.easeOut,
+       onComplete: showContent
+
+      },"disappear+.7")
+      
+      tl.to(".overlayContainer", 1, {
+        y: "-120%",
+       ease:Power1.easeOut,
+      })
+      tl.staggerTo(
+        ".landPageLetters",
+        2,
+        {
+          y: "-120%",
+          opacity: 0.2,
+          ease: Expo.easeInOut,
+        },
+        0.1, "disappear+=.8"
+      )
+      
+      tl.staggerFromTo(".navbar ul li", 1, {
+        opacity:0,
+        y:8
+    },{
+        ease:Expo.easeInOut,
+        opacity: 1,
+        y:0
+    },0.3, "disappear+=1.5")
+
+
+
+
+    content=document.querySelector('.content');
+
+      function showContent(){
+                content.style.visibility="visible";
+                body.style.overflow="auto";
+                }
+
+    });
+
+  });
+  
 
     function reset(){
         imgs.forEach(img=>{
@@ -273,62 +352,62 @@ hotFetched=true;
 
 
 
-let enterButton=document.querySelector('.enterButton'),
-    content=document.querySelector('.content'),
-    overlayContainer=document.querySelector('.overlayContainer'),
-    overlay= document.querySelector('.overlay')
+// let enterButton=document.querySelector('.enterButton'),
+//     content=document.querySelector('.content'),
+//     overlayContainer=document.querySelector('.overlayContainer'),
+//     overlay= document.querySelector('.overlay')
 
     
-enterButton.addEventListener('click', fadeOut);
+// enterButton.addEventListener('click', fadeOut);
 
-  function fadeOut() {
+//   function fadeOut() {
 
     
-    TweenMax.to('.enterButton', 0.1, {scaleX:1.3, scaleY:1,  ease: Power4.easeInOut} );
-    TweenMax.to('.enterButton', 0.1, {scaleX:0.1, scaleY:0.1, opacity: 0, delay:0.3,  ease: Power4.easeInOut});
+//     TweenMax.to('.enterButton', 0.1, {scaleX:1.3, scaleY:1,  ease: Power4.easeInOut} );
+//     TweenMax.to('.enterButton', 0.1, {scaleX:0.1, scaleY:0.1, opacity: 0, delay:0.3,  ease: Power4.easeInOut});
 
 
-    TweenMax.to(".backText", 1, {
-         y: -400,
-         opacity: 0,
-         ease: Power4.easeInOut,
-         delay: 1,
+//     TweenMax.to(".backText", 1, {
+//          y: -400,
+//          opacity: 0,
+//          ease: Power4.easeInOut,
+//          delay: 1,
 
-    });
+//     });
 
-    TweenMax.from(".overlay", 1.2, {
-         ease: Power2.easeInOut,
-         onComplete: showContent
-    });
+//     TweenMax.from(".overlay", 1.2, {
+//          ease: Power2.easeInOut,
+//          onComplete: showContent
+//     });
 
-    TweenMax.to(".overlay", 2, {
-         delay: 1.6,
-         top: "-110%",
-         ease: Expo.easeInOut,
-    })
+//     TweenMax.to(".overlay", 2, {
+//          delay: 1.6,
+//          top: "-110%",
+//          ease: Expo.easeInOut,
+//     })
 
-    TweenMax.staggerFromTo(".navbar ul li", 1, {
-        opacity:0,
-        y:8
-    },{
-        ease:Expo.easeInOut,
-        delay:2,
-        opacity: 1,
-        y:0
-    },0.2)
+//     TweenMax.staggerFromTo(".navbar ul li", 1, {
+//         opacity:0,
+//         y:8
+//     },{
+//         ease:Expo.easeInOut,
+//         delay:2,
+//         opacity: 1,
+//         y:0
+//     },0.2)
 
 
-    TweenMax.staggerFromTo(".slides", 1, {
-        y:-50, ease:Expo.easeInOut},
-        {delay:2.3, y:0, ease:Expo.easeInOut
-    })
+//     TweenMax.staggerFromTo(".slides", 1, {
+//         y:-50, ease:Expo.easeInOut},
+//         {delay:2.3, y:0, ease:Expo.easeInOut
+//     })
  
 
-    function showContent(){
-        content.style.visibility="visible";
-        body.style.overflow="auto";
-        }
-    }
+//     function showContent(){
+//         content.style.visibility="visible";
+//         body.style.overflow="auto";
+//         }
+//     }
 
 if(window.width>800){
 
@@ -344,4 +423,9 @@ if(window.width>800){
         overlay.style.backgroundPosition=`${newValueX}px ${newValueY}px`
     });
 }
+
+
+
+
+
 
