@@ -28,8 +28,9 @@
     },"init+=2.2");
   
     tl.to("button", 0.8, {
+      visibility:"visible",
       opacity: "1"
-    });
+    },"init+=2.5");
   
     let button = document.querySelector(".enterButton");
     button.addEventListener("click", _ => {
@@ -78,7 +79,7 @@
     content=document.querySelector('.content');
 
       function showContent(){
-                content.style.display="initial";
+                content.style.visibility="visible";
                 body.style.overflow="auto";
                 }
     });
@@ -348,64 +349,6 @@ let hotFetched=false;
 hotFetched=true;
 });
 
-
-
-// let enterButton=document.querySelector('.enterButton'),
-//     content=document.querySelector('.content'),
-//     overlayContainer=document.querySelector('.overlayContainer'),
-//     overlay= document.querySelector('.overlay')
-
-    
-// enterButton.addEventListener('click', fadeOut);
-
-//   function fadeOut() {
-
-    
-//     TweenMax.to('.enterButton', 0.1, {scaleX:1.3, scaleY:1,  ease: Power4.easeInOut} );
-//     TweenMax.to('.enterButton', 0.1, {scaleX:0.1, scaleY:0.1, opacity: 0, delay:0.3,  ease: Power4.easeInOut});
-
-
-//     TweenMax.to(".backText", 1, {
-//          y: -400,
-//          opacity: 0,
-//          ease: Power4.easeInOut,
-//          delay: 1,
-
-//     });
-
-//     TweenMax.from(".overlay", 1.2, {
-//          ease: Power2.easeInOut,
-//          onComplete: showContent
-//     });
-
-//     TweenMax.to(".overlay", 2, {
-//          delay: 1.6,
-//          top: "-110%",
-//          ease: Expo.easeInOut,
-//     })
-
-//     TweenMax.staggerFromTo(".navbar ul li", 1, {
-//         opacity:0,
-//         y:8
-//     },{
-//         ease:Expo.easeInOut,
-//         delay:2,
-//         opacity: 1,
-//         y:0
-//     },0.2)
-
-
-//     TweenMax.staggerFromTo(".slides", 1, {
-//         y:-50, ease:Expo.easeInOut},
-//         {delay:2.3, y:0, ease:Expo.easeInOut
-//     })
- 
-
-//     function showContent(){
-//         content.style.visibility="visible";
-//         body.style.overflow="auto";
-//         }
-//     }
 
 if(window.width>800){
 
