@@ -25,7 +25,7 @@
     }
 
 .content{
-    visibility: hidden;
+    display: none;
 }
 .contentBody{
     margin:0 5em;

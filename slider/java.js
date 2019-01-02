@@ -8,7 +8,6 @@
      body= document.querySelector('body');
 
 //Image Slider Functionality
-window.addEventListener("load", _ => {
     let tl = new TimelineMax();
   
     tl.staggerTo(
@@ -79,13 +78,13 @@ window.addEventListener("load", _ => {
     content=document.querySelector('.content');
 
       function showContent(){
-                content.style.visibility="visible";
+                content.style.display="initial";
                 body.style.overflow="auto";
                 }
 
     });
 
-  });
+  
   
 
     function reset(){
