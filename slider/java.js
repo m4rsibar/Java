@@ -8,7 +8,7 @@
      body= document.querySelector('body');
 
 //splash page
-window.addEventListener('load', _=>{
+
     let tl = new TimelineMax();
 
     tl.staggerTo(
@@ -80,7 +80,6 @@ window.addEventListener('load', _=>{
                 body.style.overflow="auto";
                 }
     });
-})
 
 
 
