@@ -47,6 +47,7 @@
        ease:Power1.easeOut,
        onComplete: showContent
 
+
       },"disappear+.7")
       
       tl.to(".overlayContainer", 1, {
@@ -60,6 +61,7 @@
           y: "-120%",
           opacity: 0.2,
           ease: Expo.easeInOut,
+
         },
         0.1, "disappear+=.8"
       )
@@ -76,7 +78,7 @@
     content=document.querySelector('.content');
 
       function showContent(){
-                // content.style.display="initial";
+                content.style.display="initial";
                 body.style.overflow="auto";
                 }
     });
