@@ -9,6 +9,7 @@
 
 //splash page
 
+function splashPageAnimation(){
     let tl = new TimelineMax();
 
     tl.staggerTo(
@@ -40,13 +41,13 @@
 
         tl.to("button", .7, {
         y:"-120%",
-        opacity: "0"
+        opacity: "0",
+        onComplete: showContent
       },"disappear")
       
       tl.to(".overlay", 1.2, {
         y: "-120%",
        ease:Power1.easeOut,
-       onComplete: showContent
 
 
       },"disappear+.7")
@@ -83,8 +84,9 @@
                 body.style.overflow="auto";
                 }
     });
+}
 
-
+splashPageAnimation();
 
 //image slider
     function reset(){
@@ -233,8 +235,6 @@ let menuChoice=document.querySelector('.menuChoice');
 let hotButton=document.querySelector('.hot');
 
 let showColdMenu = new TimelineMax({paused:true, reversed: true});
-
-    
     showColdMenu.to(
       ".coldMenu",
       1,
@@ -247,88 +247,45 @@ let showColdMenu = new TimelineMax({paused:true, reversed: true});
 
 // timeline for showing hot menu
       let showHotMenu=new TimelineMax({paused:true, reversed:true});
-
     showHotMenu.to(
-      ".hotMenu",1,{ 
+      ".hotMenu",
+      1,
+      { 
+       display: "flex",
        opacity: 1, 
-       y:-5,
-       display: "flex" 
+       y:-5
       },"showmenu")
 
-let coldFetched=false;
-coldButton.addEventListener('click',e=>{
-    e.preventDefault();
-   showHotMenu.pause(0)
-    showColdMenu.restart()
+// 
  
+//Fetching Menu Data
 
+//////////////////////////////////////FIX CLOSURE
 
-    if(!coldFetched){
-      fetch('./menu.JSON', {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    })
-        .then(response=>response.json())
-        .then(data => {
-        drinks = [...data.coldDrinks];
+// let fetched;
 
+function fetchMenu(menu,temp){    
+let fetched=false;
 
-        for (var i = 0; i < drinks.length; i++) {
-            coldMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span class="name">${drinks[i].drink}</span></div>`
-        }
-        coldMenu.scrollIntoView(); 
-        
-        let menuImgs=document.querySelectorAll('.menuImgContainer');
-        console.log(menuImgs)
-        
-        function boxEnter(e) {
-            this.classList.add('active');
-            this.parentNode.classList.add('active');
-        }
-        
-        function boxLeave(e) {
-            this.classList.remove('active');
-            this.parentNode.classList.remove('active');
-        }
-        
-        menuImgs.forEach(function(i){
-          i.addEventListener('mouseenter', boxEnter);
-          i.addEventListener('mouseleave', boxLeave);
-        })
-    })
-}
-coldFetched=true;
-})
+return function(){
+    if(!fetched){
+        fetch('./menu.JSON', {
+            headers : { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+             }
+          })
+          .then(response=>response.json())
+          .then(data => {
+          drinks = [...data[temp]];
 
-
-let hotFetched=false;
-    hotButton.addEventListener('click',e=>{
-        e.preventDefault();
-        showColdMenu.pause(0)
-          showHotMenu.restart()
-
-    
-    if(!hotFetched){
-      fetch('./menu.JSON', {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    })
-        .then(response=>response.json())
-        .then(data => {
-        drinks = [...data.hotDrinks];
-
-        for (var i = 0; i < drinks.length; i++) {
-            hotMenu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span class="name">${drinks[i].drink}
+          for (var i = 0; i < drinks.length; i++) {
+            menu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span class="name">${drinks[i].drink}
             </span></div>`
         }
-        hotMenu.scrollIntoView(); 
+        menu.scrollIntoView(); 
 
         let menuImgs=document.querySelectorAll('.menuImgContainer');
-        console.log(menuImgs)
         
         function boxEnter(e) {
             this.classList.add('active');
@@ -344,29 +301,31 @@ let hotFetched=false;
           i.addEventListener('mouseenter', boxEnter);
           i.addEventListener('mouseleave', boxLeave);
         })
-    })
+     })
+    }
+    fetched=true;
+  }
 }
-hotFetched=true;
+
+        
+
+    
+
+let fetchHotMenu= fetchMenu(hotMenu, "hotDrinks");
+
+hotButton.addEventListener('click',e=>{
+    e.preventDefault();
+   showColdMenu.pause(0);
+    showHotMenu.restart();
+    fetchHotMenu();
+    // fetchMenu(hotMenu, "hotDrinks")
 });
 
+let fetchColdMenu=fetchMenu(coldMenu, "coldDrinks");
 
-if(window.width>800){
-
-    let movementStrength=100;
-    let height= movementStrength/window.innerHeight;
-    let width= movementStrength/window.innerWidth;
-
-    overlay.addEventListener('mousemove', e=>{
-        let pageX=e.pageX;
-        let pageY=e.pageY;
-        let newValueX=width*pageX*-1/-25;
-        let newValueY=height*pageY*-1/-50;
-        overlay.style.backgroundPosition=`${newValueX}px ${newValueY}px`
+coldButton.addEventListener('click', e=>{
+    e.preventDefault();
+    showHotMenu.pause(0);
+     showColdMenu.restart();
+    fetchColdMenu();
     });
-}
-
-
-
-
-
-

@@ -401,30 +401,31 @@
     }
 
     .a{
-        -webkit-text-stroke: 3px black;
+        /* -webkit-text-stroke: 3px black; */
         text-shadow: 1px 0 12px black;
     }
 
     .b{
-    z-index:1;     transform:translateX(.4em);
-    -webkit-text-stroke: 3px black;
+    z-index:1;     
+    transform:translateX(.4em);
+    /* -webkit-text-stroke: 3px black; */
     text-shadow: 1px 0px 12px black
     }
 
     .o{
     transform:translateX(.75em);
-    -webkit-text-stroke: 3px black;
+    /* -webkit-text-stroke: 3px black; */
     text-shadow: 1px 0 12px black;
     }
 
     .u{
-    -webkit-text-stroke: 3px black;
+    /* -webkit-text-stroke: 3px black; */
      transform:translateX(1.17em);
     z-index:1;
     text-shadow: 1px 1px 12px black;
     }
     .t{
-        -webkit-text-stroke: 3px black;
+        /* -webkit-text-stroke: 3px black; */
 
     transform:translateX(1.64em);
     z-index:1;
