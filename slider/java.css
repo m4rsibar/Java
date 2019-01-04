@@ -445,22 +445,25 @@
         background-color:rgba(0,0,0,0.7);
         height:15%;
         margin-bottom:1em;
+        color:white;
     }
     
+    .aboutSection h2{
+        align-self:center;
+        padding-bottom:1em;
+    }
+
+    .aboutSection p{
+        width:50%;
+
+    }
 
     .learn{
         background-image:url('imgs/landingpage3.jpeg');
         position: relative;
         display:flex;
         flex-direction:column;
-        color:white;
         justify-content: center;
-    }
-
-    .collaborate{
-        background-image:url('imgs/collab.jpeg');
-        background-position-x: 50%;
-        position:relative;
     }
 
     .learn h1{
@@ -473,7 +476,24 @@
         top:1em;
         left:-2.5em;
     }
-    
+
+    .learn h2{
+        margin-left:5em;
+    }
+
+    .learn p{
+        align-self: flex-end;
+    }
+
+    .collaborate{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        background-image:url('imgs/collab.jpeg');
+        background-position-x: 50%;
+        position:relative;
+    }
+
     .collaborate h1{
         -webkit-transform: rotate(90deg);
         position:absolute;
@@ -482,6 +502,17 @@
         font-size:4em;
         top:3em;
         right:-4.8em;
+    }
+
+    
+    .collaborate h2{
+        align-self: flex-start;
+        padding-left:1em;
+    }
+
+    .collaborate p{
+        align-self: flex-start;
+        padding-left:3em;
     }
 
 
