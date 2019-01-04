@@ -104,13 +104,9 @@
     
     /* SlideShow */
     .slides{
-        margin-left:auto;
-        margin-right:auto;
-        margin-bottom:2em;
         padding:0;
         overflow-x:hidden;
-        width:95%;
-        box-shadow: -1px 1px 13px 0px rgba(8, 8, 8, 0.527);
+        width:100%;
     }
     .slide{
         background-size: cover;
@@ -204,6 +200,7 @@
         font-weight: lighter;
         transform: translateX(100px);
     }
+
 /* NAVIGATION */
 
     .navbar {
@@ -214,7 +211,6 @@
     transition:all 1s ease;
     position: relative;
     z-index: 1;
-    margin: 0 0 2em;
     z-index:1;
     position:relative;
     }
@@ -278,7 +274,7 @@
     .menuChoice{
         display:flex;
         justify-content: space-evenly;
-        box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.445);
+        box-shadow: 0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
         border-radius:6px;
         font-family:"Staatliches";
         margin:8em auto 4em;
@@ -384,63 +380,113 @@
 /* ABOUT SECTION */
     .headingWrapper{
     font-size:10rem;
-    padding:0 0 0 .2em;
     border-radius:4px;
-    margin:0 0 0 .2em;
+    margin:0 0 .3em 1em;
     font-family:'Open Sans Condensed';
     font-weight:700;
     color:white;
     position:relative;
     height:200px;
     width:40%;
-    float:left;
+    display:inline-block;
+    border-bottom:4px solid white;
     }
+
     .headingWrapper span{
     display:inline-block;
     position:absolute;
     }
 
     .a{
-        /* -webkit-text-stroke: 3px black; */
-        text-shadow: 1px 0 12px black;
+        text-shadow:  0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
     }
 
     .b{
     z-index:1;     
     transform:translateX(.4em);
-    /* -webkit-text-stroke: 3px black; */
-    text-shadow: 1px 0px 12px black
+    text-shadow:  0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
     }
 
     .o{
     transform:translateX(.75em);
-    /* -webkit-text-stroke: 3px black; */
-    text-shadow: 1px 0 12px black;
+    text-shadow: 0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
     }
 
     .u{
-    /* -webkit-text-stroke: 3px black; */
      transform:translateX(1.17em);
     z-index:1;
-    text-shadow: 1px 1px 12px black;
+    text-shadow: 0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
     }
     .t{
-        /* -webkit-text-stroke: 3px black; */
-
     transform:translateX(1.64em);
     z-index:1;
-    text-shadow: 1px 1px 12px black;
+    text-shadow: 0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
     }
 
     .aboutContent{
-        column-count: 3;
-        padding: 0 3em 0 2em;
+        display:flex;
+        justify-content: space-evenly;
+        margin: 0 -5em;
+        background:#000000de;
+        height:400vh;
+        position:relative;
     }
 
-    .lorem{
-        margin:5em;
+
+    .aboutContainer{
+        height:100%;
+        width:70%;
     }
 
+    .aboutSection{
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-blend-mode: color;
+        background-color:rgba(0,0,0,0.7);
+        height:15%;
+        margin-bottom:1em;
+    }
+    
+
+    .learn{
+        background-image:url('imgs/landingpage3.jpeg');
+        position: relative;
+        display:flex;
+        flex-direction:column;
+        color:white;
+        justify-content: center;
+    }
+
+    .collaborate{
+        background-image:url('imgs/collab.jpeg');
+        background-position-x: 50%;
+        position:relative;
+    }
+
+    .learn h1{
+        position:absolute;
+        transform:translateX(-3em);
+        font-family:"Open Sans";
+        font-size:5em;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        top:1em;
+        left:-2.5em;
+    }
+    
+    .collaborate h1{
+        -webkit-transform: rotate(90deg);
+        position:absolute;
+        color:white;
+        font-family:"Open Sans";
+        font-size:4em;
+        top:3em;
+        right:-4.8em;
+    }
+
+
+
+    
 /* SCROLLBAR     */
     ::-webkit-scrollbar-track
     {
@@ -492,7 +538,6 @@
     @media(max-width:790px){
         .aboutContent{
             clear:both;
-            column-count:2;
             padding-top: 2em;
         }
 
@@ -503,12 +548,8 @@
         }
     }
 
-    @media(max-width:650px){
-        .aboutContent{
-            column-count: 1;
-        
-        }
-    }
+    /* @media(max-width:650px){
+    } */
 
    
 
