@@ -378,56 +378,13 @@
         margin:0 1em;
     }
 /* ABOUT SECTION */
-    .headingWrapper{
-    font-size:10rem;
-    border-radius:4px;
-    margin:0 0 .3em 1em;
-    font-family:'Open Sans Condensed';
-    font-weight:700;
-    color:white;
-    position:relative;
-    height:200px;
-    width:40%;
-    display:inline-block;
-    border-bottom:4px solid white;
-    }
-
-    .headingWrapper span{
-    display:inline-block;
-    position:absolute;
-    }
-
-    .a{
-        text-shadow:  0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
-    }
-
-    .b{
-    z-index:1;     
-    transform:translateX(.4em);
-    text-shadow:  0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
-    }
-
-    .o{
-    transform:translateX(.75em);
-    text-shadow: 0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
-    }
-
-    .u{
-     transform:translateX(1.17em);
-    z-index:1;
-    text-shadow: 0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
-    }
-    .t{
-    transform:translateX(1.64em);
-    z-index:1;
-    text-shadow: 0 9px 38px rgba(0,0,0,0.30), 0 8px 10px rgba(0,0,0,0.22);
-    }
+   
 
     .aboutContent{
         display:flex;
         justify-content: space-evenly;
         margin: 0 -5em;
-        background:#000000de;
+        background: #000000e8;
         height:400vh;
         position:relative;
     }
@@ -442,39 +399,44 @@
         background-size:cover;
         background-repeat: no-repeat;
         background-blend-mode: color;
-        background-color:rgba(0,0,0,0.7);
+        background-color:rgba(0,0,0,0.5);
         height:15%;
         margin-bottom:1em;
         color:white;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        border-radius:3px;
     }
     
     .aboutSection h2{
         align-self:center;
         padding-bottom:1em;
+        font-family:"Open Sans";
     }
 
     .aboutSection p{
         width:50%;
-
+        font-family:"Lato";
     }
 
     .learn{
         background-image:url('imgs/landingpage3.jpeg');
         position: relative;
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
+    }
+
+    .aboutContent h1{
+        position:absolute;
+        font-family:"Open Sans";
+        font-size:5em;
     }
 
     .learn h1{
-        position:absolute;
         transform:translateX(-3em);
-        font-family:"Open Sans";
-        font-size:5em;
         transform: rotate(-90deg);
         -webkit-transform: rotate(-90deg);
         top:1em;
-        left:-2.5em;
+        left:-2em;
     }
 
     .learn h2{
@@ -486,9 +448,6 @@
     }
 
     .collaborate{
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
         background-image:url('imgs/collab.jpeg');
         background-position-x: 50%;
         position:relative;
@@ -501,7 +460,7 @@
         font-family:"Open Sans";
         font-size:4em;
         top:3em;
-        right:-4.8em;
+        right: -2.3em;
     }
 
     
@@ -515,7 +474,24 @@
         padding-left:3em;
     }
 
+    .enjoy{
+        background-image: url('imgs/enjoy.jpeg');
+        position:relative;
+    }
 
+    .enjoy h1{
+        transform: rotate(-90deg);
+        left: -1.9em;
+        top: 1.5em;
+    }
+
+    .enjoy h2{
+        margin-left:9em;
+    }
+
+    .enjoy p{
+        align-self: flex-end;
+    }
 
     
 /* SCROLLBAR     */
@@ -540,9 +516,6 @@
 /* MEDIA QUERIES    */
 
     @media(max-width:800px){
-        .headingWrapper{
-            right: .4em;
-        }
         .content{
             margin:0;
         }
@@ -557,31 +530,46 @@
             flex-direction:column;
             align-items: center;
         }
+
+
     }
 
     @media(max-width:1340px){
         .aboutContent{
-            clear:both;
             padding-top: 2em;
         }
     }
 
     @media(max-width:790px){
+        .aboutSection h1{
+            font-size:3.8em;
+        }
+
+        .enjoy h1{
+            left: -1.8em;
+        }
+
+        .enjoy h2{
+            margin-left: 3em;
+        }
+
+        .collaborate h1{
+            right: -8.5rem;        
+        }
+        
+        .collaborate p{
+            padding-left: .8em;
+        }
+
+        .aboutSection p{
+            width:95%;
+        }
+
         .aboutContent{
-            clear:both;
             padding-top: 2em;
         }
-
-        .headingWrapper{
-            /* padding-right:3em; */
-            width:90vw;
-            margin:0;
-        }
     }
+    
 
-    /* @media(max-width:650px){
-    } */
-
-   
 
       
