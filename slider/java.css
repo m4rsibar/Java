@@ -139,8 +139,6 @@
         -o-background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        background-blend-mode: color;
-        background-color:rgba(0,0,0,0.0.5);
         position:absolute;
         -webkit-transition: ease;
         -o-transition: ease;

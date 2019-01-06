@@ -145,12 +145,7 @@ splashPageAnimation();
             next();
         }, 4500);
 
-        imgContainer.addEventListener('mouseenter', e=>{
-            clearInterval(looper);
-            slide.forEach(slide=>{
-                slide.style.backgroundColor="transparent";
-            });
-        });
+
 
     slide.forEach(slide=>{
         slide.addEventListener('mousemove', (e)=>{
