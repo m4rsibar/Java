@@ -115,7 +115,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-blend-mode: color;
-        background-color:rgba(0,0,0,0.4);
+        background-color:rgba(0,0,0,0.0.5);
         position:absolute;
         transition: ease;
         transition-duration: .7s;
