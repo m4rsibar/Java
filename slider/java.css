@@ -46,6 +46,7 @@
         -ms-flex-align:center;
             align-items:center;
     position:absolute;
+    overflow:hidden;
   }
   
   .landPageLetters{
