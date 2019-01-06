@@ -9,84 +9,84 @@
 
 //splash page
 
-// function splashPageAnimation(){
-//     let tl = new TimelineMax();
+function splashPageAnimation(){
+    let tl = new TimelineMax();
 
-//     tl.staggerTo(
-//       ".landPageLetters",
-//       1.4,
-//       {
-//         opacity: 1,
-//         ease: Expo.easeInOut
-//       },
-//       0.3, "init"
-//     );
+    tl.staggerTo(
+      ".landPageLetters",
+      1.4,
+      {
+        opacity: 1,
+        ease: Expo.easeInOut
+      },
+      0.3, "init"
+    );
   
-//     tl.to(".overlay", 0.8, {
-//       visibility: "visible",
-//       y: 0,
-//       ease: Bounce.easeOut
-//     },"init+=2.2");
+    tl.to(".overlay", 0.8, {
+      visibility: "visible",
+      y: 0,
+      ease: Bounce.easeOut
+    },"init+=2.2");
   
-//     tl.to("button", 0.8, {
-//       visibility:"visible",
-//       opacity: "1"
-//     },"init+=2.5");
+    tl.to("button", 0.8, {
+      visibility:"visible",
+      opacity: "1"
+    },"init+=2.5");
   
-//     let button = document.querySelector(".enterButton");
-//     button.addEventListener("click", _ => {
+    let button = document.querySelector(".enterButton");
+    button.addEventListener("click", _ => {
 
-//         tl.to('.enterButton', 0.1, {scaleX:1.5, scaleY:1.5,  ease: Power4.easeInOut} )
-//             tl.to('.enterButton', 0.1, {scaleX:0.2, scaleY:0.2, opacity: 0, delay:0.3,  ease: Power4.easeInOut})
+        tl.to('.enterButton', 0.1, {scaleX:1.5, scaleY:1.5,  ease: Power4.easeInOut} )
+            tl.to('.enterButton', 0.1, {scaleX:0.2, scaleY:0.2, opacity: 0, delay:0.3,  ease: Power4.easeInOut})
 
-//         tl.to("button", .7, {
-//         y:"-120%",
-//         opacity: "0",
-//         onComplete: showContent
-//       },"disappear")
+        tl.to("button", .7, {
+        y:"-120%",
+        opacity: "0",
+        onComplete: showContent
+      },"disappear")
       
-//       tl.to(".overlay", 1.2, {
-//         y: "-120%",
-//        ease:Power1.easeOut,
+      tl.to(".overlay", 1.2, {
+        y: "-120%",
+       ease:Power1.easeOut,
 
 
-//       },"disappear+.7")
+      },"disappear+.7")
       
-//       tl.to(".overlayContainer", 1, {
-//         y: "-120%",
-//        ease:Power1.easeOut,
-//       })
-//       tl.staggerTo(
-//         ".landPageLetters",
-//         2,
-//         {
-//           y: "-120%",
-//           opacity: 0.2,
-//           ease: Expo.easeInOut,
+      tl.to(".overlayContainer", 1, {
+        y: "-120%",
+       ease:Power1.easeOut,
+      })
+      tl.staggerTo(
+        ".landPageLetters",
+        2,
+        {
+          y: "-120%",
+          opacity: 0.2,
+          ease: Expo.easeInOut,
 
-//         },
-//         0.1, "disappear+=.8"
-//       )
+        },
+        0.1, "disappear+=.8"
+      )
       
-//       tl.staggerFromTo(".navbar ul li", 1, {
-//         opacity:0,
-//         y:8
-//     },{
-//         ease:Expo.easeInOut,
-//         opacity: 1,
-//         y:0
-//     },0.3, "disappear+=1.5")
+      tl.staggerFromTo(".navbar ul li", 1, {
+        opacity:0,
+        y:8
+    },{
+        ease:Expo.easeInOut,
+        opacity: 1,
+        y:0
+    },0.3, "disappear+=1.5")
 
-//     content=document.querySelector('.content');
+    let content=document.querySelector('.content');
 
-//       function showContent(){
-//                 content.style.visibility="visible";
-//                 body.style.overflow="auto";
-//                 }
-//     });
-// }
+      function showContent(){
+            content.style.visibility="visible";
+            body.style.overflow="auto";
+                }
+    });
+}
 
-// splashPageAnimation();
+splashPageAnimation();
 
 //image slider
     function reset(){
@@ -235,6 +235,15 @@ let navTop= navbar.offsetTop;
               1.4,
               { 
                opacity: 1, 
+               ease:Power1.easeOut,
+              })
+        }else{
+            let showWord=new TimelineMax();
+            showWord.to(
+              element,
+              1,
+              { 
+               opacity: 0, 
                ease:Power1.easeOut,
               })
         }
