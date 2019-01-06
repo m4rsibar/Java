@@ -488,6 +488,7 @@
         margin: 0 -5em;
         background: #000000e8;
         height:200vh;
+        overflow-x: hidden;
     }
 
 
@@ -670,7 +671,7 @@
 
     @media(max-width:790px){
         .aboutSection h1{
-            font-size:3.8em;
+            font-size:3.5em;
         }
 
         .enjoy h1{
@@ -698,6 +699,6 @@
         }
     }
     
-
+    
 
       
