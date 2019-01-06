@@ -11,7 +11,6 @@
 
 function splashPageAnimation(){
     let tl = new TimelineMax();
-
     tl.staggerTo(
       ".landPageLetters",
       1.4,
@@ -35,12 +34,9 @@ function splashPageAnimation(){
   
     let button = document.querySelector(".enterButton");
     button.addEventListener("click", _ => {
-
-        tl.to('.enterButton', 0.1, {scaleX:1.5, scaleY:1.5,  ease: Power4.easeInOut} )
-            tl.to('.enterButton', 0.1, {scaleX:0.2, scaleY:0.2, opacity: 0, delay:0.3,  ease: Power4.easeInOut})
-
         tl.to("button", .7, {
         y:"-120%",
+        scale:0,
         opacity: "0",
         onComplete: showContent
       },"disappear")
@@ -235,6 +231,7 @@ let navTop= navbar.offsetTop;
               1.4,
               { 
                opacity: 1, 
+               scale:1.2,
                ease:Power1.easeOut,
               })
         }else{
