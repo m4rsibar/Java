@@ -294,7 +294,7 @@ let fetched=false;
 
 return function(){
     if(!fetched){
-        fetch('./menu.JSON', {
+        fetch('./slider/menu.JSON', {
             headers : { 
               'Content-Type': 'application/json',
               'Accept': 'application/json'
