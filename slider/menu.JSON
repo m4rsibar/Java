@@ -1,16 +1,16 @@
 {
     "coldDrinks":[
-        {"drink": "Iced Macchiato","img": "imgs/iced macchiato.jpg","ingredients": ""},
-        {"drink": "Iced Coffee","img": "imgs/icedCoffee.jpg"},
-        {"drink": "Blended Coffee","img": "imgs/blended.jpg"},
-        {"drink": "Cold Brew", "img":"imgs/coldbrew.jpg"},
-        {"drink": "Nitro", "img":"imgs/nitro.jpg"}
+        {"drink": "Iced Macchiato","img": "slider/imgs/iced macchiato.jpg","ingredients": ""},
+        {"drink": "Iced Coffee","img": "slider/imgs/cappuccino.jpg"},
+        {"drink": "Blended Coffee","img": "slider/imgs/blended.jpg"},
+        {"drink": "Cold Brew", "img":"slider/imgs/coldbrew.jpg"},
+        {"drink": "Nitro", "img":"slider/imgs/nitro.jpg"}
       ],
       "hotDrinks":[
-        {"drink": "Cappuccino","img": "imgs/cappuccino.jpg"},
-        {"drink": "Caffè Latte","img": "imgs/Caffè Latte.jpg"},
-        {"drink": "Caffè Americano","img": "imgs/Caffè Americano.jpg"},
-        {"drink": "Flat White","img": "imgs/Flat White.jpg"},
-        {"drink": "Latte Macchiato","img": "imgs/Latte Macchiato.jpg"}
+        {"drink": "Cappuccino","img": "slider/imgs/cappuccino.jpg"},
+        {"drink": "Caffè Latte","img": "slider/imgs/Caffè Latte.jpg"},
+        {"drink": "Caffè Americano","img": "slider/imgs/Caffè Americano.jpg"},
+        {"drink": "Flat White","img": "slider/imgs/Flat White.jpg"},
+        {"drink": "Latte Macchiato","img": "slider/imgs/Latte Macchiato.jpg"}
       ]
 }
