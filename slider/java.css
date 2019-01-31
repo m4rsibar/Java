@@ -151,14 +151,83 @@
         font-family: "Staatliches";
         letter-spacing:0.2em;
     }
+    .slide h1{
+        color:white;
+        padding:3px;
+    }
 
-    .logowrap{
-        position:relative;
+    .slider-1{
+        background-image: url('imgs/coffee1.jpeg');
+
+    }
+    .slider-2{
+        background-image: url('imgs/coffee2.jpeg');
+
+    }
+    .slider-3{
+        background-image: url('imgs/coffee3.jpeg');
+    }
+    .slider-4{
+        background-image: url('imgs/coffee4.jpeg');
+    }
+    .slider-5{
+        background-image: url('imgs/coffee5.jpeg');
     }
     
+    .slides{
+        position: relative;
+        height:50vh;
+    }
+
+    .right{
+        -webkit-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+                transform: translateX(100%);
+        position: absolute;
+        top:46.9%;
+        right:0;
+        padding-right:.8em;
+        -webkit-transition: ease-in-out;
+        -o-transition: ease-in-out;
+        transition: ease-in-out;
+        -webkit-transition-duration: .3s;
+             -o-transition-duration: .3s;
+                transition-duration: .3s;
+        cursor:pointer;
+    }
+
+
+    .left{
+        -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+                transform: translateX(-100%);
+        position: absolute;
+        top:46.9%;
+        left:0;
+        padding-left:.8em;
+        -webkit-transition: ease-in-out;
+        -o-transition: ease-in-out;
+        transition: ease-in-out;
+        -webkit-transition-duration: .3s;
+             -o-transition-duration: .3s;
+                transition-duration: .3s;
+        cursor:pointer;
+    }
+    .showArrow{
+        -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+                transform: translateX(0);
+    }
+    .showImg{
+        opacity:1;
+
+    }
+    .hideImg{
+        opacity:0;
+    }
     .java{
         display:inline-block;
-        font-size:8em;
+        font-size:5em;
         border: 4px solid white;
         padding: 0 .3em;
         line-height: 1em;
@@ -166,14 +235,15 @@
         -webkit-transform: translateX(.5em);
             -ms-transform: translateX(.5em);
                 transform: translateX(.5em);
+        margin-top:.3em;
     }
 
     .codingCafe{
         color:white;
         font-weight: lighter;
-        -webkit-transform: translateX(200px);
-            -ms-transform: translateX(200px);
-                transform: translateX(200px);
+        -webkit-transform: translateX(100px);
+            -ms-transform: translateX(100px);
+                transform: translateX(100px);
     }
 
 /* NAVIGATION */
@@ -631,66 +701,6 @@
         }
     }
     
-   
-  .wrap {
-        overflow: hidden;
-        height:70vh;
-         width:100%;
-         position:relative;
-  }
-   
-  .slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-  }
-   
-  .card{
-    width:100%;
-    height:100%;
-    display:flex;
-    background: #fff;
-  }
-  
-  .card-img{
-    background-position:center;
-    width:70%;
-    height:100%;
-    background-size:cover;
-    background-repeat:no-repeat;
-  }
-  
-  #img03{
-    background-image: url(imgs/coffee1.jpeg)
-  }
-  
-  .card-content{
-    display:flex;
-    align-items: center;
-    width:50%;
-    background:#0A0A0A;
-  }
-  
-  .card-theme{
-    font-weight:900;
-    font-size:1.7vmin;
-    text-transform:uppercase;
-    letter-spacing:10px;
-    color:grey;
-  }
-  
-  .card-header{
-    font-weight:700;
-    font-size:54px;
-    text-transform:capitalize;
-    line-height:0.91;
-    margin: 3vmin 0 3.5vmin;
-    color:#fff;
-  }
-  
-  
-  
+    
+
+      
