@@ -85,103 +85,103 @@ function splashPageAnimation(){
 splashPageAnimation();
 
 //image slider
-    function reset(){
-        imgs.forEach(img=>{
-            img.classList.add('hideImg');
-        })
-    }
+    // function reset(){
+    //     imgs.forEach(img=>{
+    //         img.classList.add('hideImg');
+    //     })
+    // }
 
-    function startSlide(){
-        reset();
-        imgs[0].classList.remove('hideImg');
-        imgs[0].classList.add('showImg');
-    }
+    // function startSlide(){
+    //     reset();
+    //     imgs[0].classList.remove('hideImg');
+    //     imgs[0].classList.add('showImg');
+    // }
 
-    function next(){
-        reset();
-        imgs[current + 1 ].classList.remove('hideImg');
-        imgs[current + 1 ].classList.add('showImg');
-        current ++;
-    }
+    // function next(){
+    //     reset();
+    //     imgs[current + 1 ].classList.remove('hideImg');
+    //     imgs[current + 1 ].classList.add('showImg');
+    //     current ++;
+    // }
 
-    function last(){
-        reset();
-        imgs[current-1].classList.remove('hideImg');
-        imgs[current-1].classList.add('showImg');
-        current--;
-    }
+    // function last(){
+    //     reset();
+    //     imgs[current-1].classList.remove('hideImg');
+    //     imgs[current-1].classList.add('showImg');
+    //     current--;
+    // }
 
-    function leftOrRight(e){
-        if(e.offsetX>imgContainer.getBoundingClientRect().width/2&&e.offsetY<imgContainer.getBoundingClientRect().height||e.keyCode==39){
-            if(current===imgs.length -1){
-            current=-1;
-            }
-            next();
-        }
-        if(e.offsetX<window.innerWidth/2&&e.offsetY<imgContainer.getBoundingClientRect().height||e.keyCode==37){
-            if(current===0){
-            current=imgs.length;
-        }
-            last();
-        }
-    }
+    // function leftOrRight(e){
+    //     if(e.offsetX>imgContainer.getBoundingClientRect().width/2&&e.offsetY<imgContainer.getBoundingClientRect().height||e.keyCode==39){
+    //         if(current===imgs.length -1){
+    //         current=-1;
+    //         }
+    //         next();
+    //     }
+    //     if(e.offsetX<window.innerWidth/2&&e.offsetY<imgContainer.getBoundingClientRect().height||e.keyCode==37){
+    //         if(current===0){
+    //         current=imgs.length;
+    //     }
+    //         last();
+    //     }
+    // }
 
-    function removeClass(element,classToRemove){
-        (element).classList.remove(classToRemove);
-    }
-    function addClass(element,classToAdd){
-        (element).classList.remove(classToAdd);
-    }
+    // function removeClass(element,classToRemove){
+    //     (element).classList.remove(classToRemove);
+    // }
+    // function addClass(element,classToAdd){
+    //     (element).classList.remove(classToAdd);
+    // }
 
-    imgContainer.addEventListener('keyup',leftOrRight)
-    imgContainer.addEventListener('click',leftOrRight);
+    // imgContainer.addEventListener('keyup',leftOrRight)
+    // imgContainer.addEventListener('click',leftOrRight);
 
-        startSlide();
+    //     startSlide();
 
-    let looper=setInterval(() => {
-            if(current===imgs.length -1){
-            current=-1;
-            }
-            next();
-        }, 4500);
+    // let looper=setInterval(() => {
+    //         if(current===imgs.length -1){
+    //         current=-1;
+    //         }
+    //         next();
+    //     }, 4500);
 
 
 
-    slide.forEach(slide=>{
-        slide.addEventListener('mousemove', (e)=>{
-        let x=e.offsetX;
-        let y=e.offsetY;
+    // slide.forEach(slide=>{
+    //     slide.addEventListener('mousemove', (e)=>{
+    //     let x=e.offsetX;
+    //     let y=e.offsetY;
 
-        if(x>imgContainer.getBoundingClientRect().width/2){
-            rightArrow.classList.add('showArrow');
-        }else{
-            rightArrow.classList.remove('showArrow');
-        }
-        if(x<imgContainer.getBoundingClientRect().width/2){
-            rightArrow.classList.remove('showArrow');
-            leftArrow.classList.add('showArrow');
-        }else{
-            leftArrow.classList.remove('showArrow');
-        }
-    });
-    });
+    //     if(x>imgContainer.getBoundingClientRect().width/2){
+    //         rightArrow.classList.add('showArrow');
+    //     }else{
+    //         rightArrow.classList.remove('showArrow');
+    //     }
+    //     if(x<imgContainer.getBoundingClientRect().width/2){
+    //         rightArrow.classList.remove('showArrow');
+    //         leftArrow.classList.add('showArrow');
+    //     }else{
+    //         leftArrow.classList.remove('showArrow');
+    //     }
+    // });
+    // });
 
-    imgContainer.addEventListener('mouseleave', function(e){
-        looper= setInterval(() => {
-            if(current===imgs.length -1){
-            current=-1;
-            }
-            next();
-        }, 4500);
+    // imgContainer.addEventListener('mouseleave', function(e){
+    //     looper= setInterval(() => {
+    //         if(current===imgs.length -1){
+    //         current=-1;
+    //         }
+    //         next();
+    //     }, 4500);
 
-        imgs.forEach(img=>{
-            removeClass(rightArrow, 'showArrow');
-            removeClass(leftArrow, 'showArrow');
-        });
-        slide.forEach(slide=>{
-                slide.style.backgroundColor="rgba(0,0,0,0.4)";
-            });
-    });
+    //     imgs.forEach(img=>{
+    //         removeClass(rightArrow, 'showArrow');
+    //         removeClass(leftArrow, 'showArrow');
+    //     });
+    //     slide.forEach(slide=>{
+    //             slide.style.backgroundColor="rgba(0,0,0,0.4)";
+    //         });
+    // });
 //Navbar Functionality
 
 function debounce(func, wait=15, immediate=true) {
@@ -308,31 +308,40 @@ return function(){
             menu.innerHTML += `<div class="menuImgContainer"><img src="${drinks[i].img}" alt="${drinks[i].drink}" class="menuImg"><span class="name">${drinks[i].drink}
             </span></div>`
         }
+
+        // let mapped= drinks.map(drink=>{
+        //     return `<div class="menuImgContainer"><img src="${drink.img}" alt="${drink.drink}" class="menuImg"><span class="name">${drink.drink}
+        //     </span></div>`
+        // })
+
         menu.scrollIntoView(); 
 
-        let menuImgs=document.querySelectorAll('.menuImgContainer');
-        
+        //blur menu items
+
+        var menuImgs = document.querySelector('.menuImgContainer');
+
         function boxEnter(e) {
-            this.classList.add('active');
-            this.parentNode.classList.add('active');
+          this.classList.add('active');
         }
         
         function boxLeave(e) {
-            this.classList.remove('active');
-            this.parentNode.classList.remove('active');
+          this.classList.remove('active');
         }
         
-        menuImgs.forEach(function(i){
-          i.addEventListener('mouseenter', boxEnter);
-          i.addEventListener('mouseleave', boxLeave);
-        })
+        function boxMove(e) {
+          this.classList.toggle('childrenInactive', e.target.tagName !== 'LI');
+        }
+        
+        menuImgs.addEventListener('mousemove', boxMove);
+        menuImgs.addEventListener('mouseenter', boxEnter);
+        menuImgs.addEventListener('mouseleave', boxLeave);
+        
      })
     }
     fetched=true;
   }
 }
 
-        
 
     
 
@@ -341,7 +350,7 @@ let fetchHotMenu= fetchMenu(hotMenu, "hotDrinks");
 hotButton.addEventListener('click',e=>{
     e.preventDefault();
    showColdMenu.pause(0);
-    showHotMenu.restart();
+   showHotMenu.restart();
     fetchHotMenu();
     // fetchMenu(hotMenu, "hotDrinks")
 });
