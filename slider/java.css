@@ -184,8 +184,8 @@
 /* NAVIGATION */
 
     .navbar {
-        background: rgb(45, 202, 207);
-        background: linear-gradient(303deg, rgb(19, 196, 209) 0%, rgb(43, 205, 210) 17%, rgb(30, 216, 230) 57%, rgb(4, 223, 223) 91%, rgb(22, 236, 236) 100%);
+    background: rgb(45, 202, 207);
+    background: linear-gradient(303deg, rgb(19, 196, 209) 0%, rgb(43, 205, 210) 17%, rgb(30, 216, 230) 57%, rgb(4, 223, 223) 91%, rgb(22, 236, 236) 100%);
     top: 0;
     width: 100%;
     height:3rem;
@@ -608,7 +608,27 @@
                     align-items: center;
         }
 
-
+        .hero-container{
+            flex-direction:row;
+        }
+        
+        .hero-right{
+            width:100%;
+            background-color: rgba(0, 0, 0, 0.466);
+            background-blend-mode:multiply;
+        }
+        .hero-left{
+            width:0%;
+        }
+        
+        .java{
+            margin-left:1em;
+            position:relative;
+        }
+        .codingCafe{
+           position:absolute;
+           left:5em;
+        }
     }
 
     @media(max-width:1340px){
