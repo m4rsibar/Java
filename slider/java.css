@@ -305,20 +305,20 @@
         -o-transition: .3s ease;
         transition: .3s ease;
     }
-    .choice:hover{
+    /* .choice:hover{
         background-color: white;
         -webkit-box-shadow: inset 0px 1px 5px 0px black;
                 box-shadow: inset 0px 1px 5px 0px black;
-    }
+    } */
     
     .choice a{
         text-decoration: none;
         color:white;
         letter-spacing: 1.5px;
     }
-    .choice:hover a{
+    /* .choice:hover a{
         color:black;
-    }
+    } */
 
 
     .menuImgContainer{
